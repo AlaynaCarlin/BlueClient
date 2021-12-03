@@ -4,7 +4,7 @@ import GetLogs from './GetLogs';
 import { useEffect, useState } from 'react';
 
 const LogIndex = (props) => {
-    const [workouts, setWorkouts] = useState([]);
+    const [foodLogs, setFoodLogs] = useState([]);
 
     const fetchLogs = () => {
         fetch('http://localhost:3000/log/mine', {
@@ -15,7 +15,7 @@ const LogIndex = (props) => {
             })
         }) .then ((res) => res.json())
             .then ((logData) => {
-                setLogs(logData);
+                setFoodLogs(logData);
                 console.log(logData);
             })
     }

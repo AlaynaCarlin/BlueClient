@@ -1,6 +1,6 @@
 import React from "react";
 import {Table, Button} from 'reactstrap';
-import { LogModel } from "../../../../../blueServer/models";
+
 
 const LogTable = (props) => {
     return(

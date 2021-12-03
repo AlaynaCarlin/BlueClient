@@ -1,4 +1,3 @@
-import React, {useState, useEffect} from "react";
 import {Container, Row, Col} from 'reactstrap';
 // import GetLogs from './GetLogs';
 import LogFood from './CreateLog';
@@ -12,7 +11,7 @@ const LogIndex = (props) => {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${props.token}`
             })
-        }) .then ((res) => res.json())
+        }).then ((res) => res.json())
             .then ((logData) => {
                 setFoodLogs(logData);
                 console.log(logData);

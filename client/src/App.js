@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import Footer from "./Components/Site/Footer";
 import Auth from "./Components/auth/Auth";
+// import LogFood from "./Components/logs/CreateLog"; // Why is this commented out?
 import Sitebar from "./Components/auth/Navbar";
 import LogIndex from "./Components/logs/LogIndex";
 import LogFood from "./Components/logs/CreateLog";

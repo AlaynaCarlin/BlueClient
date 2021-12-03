@@ -1,10 +1,9 @@
-import React, {useState, useEffect} from "react";
 import {Container, Row, Col} from 'reactstrap';
 import GetLogs from './GetLogs';
 import { useEffect, useState } from 'react';
 
 const LogIndex = (props) => {
-    const [workouts, setWorkouts] = useState([]);
+    const [foodLogs, setFoodLogs] = useState([]);
 
     const fetchLogs = () => {
         fetch('http://localhost:3000/log/mine', {
@@ -13,9 +12,9 @@ const LogIndex = (props) => {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${props.token}`
             })
-        }) .then ((res) => res.json())
+        }).then ((res) => res.json())
             .then ((logData) => {
-                setLogs(logData);
+                setFoodLogs(logData);
                 console.log(logData);
             })
     }

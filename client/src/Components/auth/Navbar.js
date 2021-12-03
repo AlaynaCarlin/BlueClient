@@ -17,8 +17,8 @@ const Sitebar = (props) => {
     }
     return(
         <Navbar color="faded" light expand="md">
-            <NavbarBrand href="/">Workout Log</NavbarBrand>
-            <NavbarToggler onClick={toggle}/>
+            {/* <NavbarBrand href="/">I 8 That?</NavbarBrand>
+            <NavbarToggler onClick={toggle}/> */}
             {/* //We just want to see what our site would look like on a mobile device. You will see that we get a hamburger icon pop up. Click on that, and then you will see our logout button appear. */}
             <Collapse isOpen={isOpen} navbar>
                 <Nav className="ml-auto" navbar >

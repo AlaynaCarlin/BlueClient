@@ -1,7 +1,7 @@
 import React, { useState, userEffect } from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
-const logFood = (props) => {
+const LogFood = (props) => {
     const [what, setWhat] = useState('');
     const [where, setWhere] = useState('');
     const [calories, setCalories] = useState('');
@@ -76,4 +76,4 @@ const logFood = (props) => {
         </>
     )
 }
-export default Log;
+export default LogFood;

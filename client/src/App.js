@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import LogIn from './Components/login';
 import SignUp from './Components/signup';
-import Log from './Components/logs/Log';
+import LogFood from './Components/logs/CreateLog';
 
 function App() {
   return (

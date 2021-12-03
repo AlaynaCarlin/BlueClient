@@ -19,4 +19,19 @@ const LogIndex = (props) => {
                 console.log(logData);
             })
     }
+
+    return(
+        <Container>
+            <Row>
+                <Col md="3">
+                    {/* {create component} */}
+                </Col>
+                <Col md="9">
+                    {/* {workout table} */}
+                </Col>
+            </Row>
+        </Container>
+    )
 }
+
+export default LogIndex;

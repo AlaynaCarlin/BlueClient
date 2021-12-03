@@ -35,9 +35,11 @@ function App() {
 
   return (
     <div className="App">
-      <Sitebar clickLogout={clearToken} />
-      {protectedViews()}
-
+     <SignUp />
+     <LogIn />
+     <LogFood />
+     <Sitebar clickLogout={clearToken} />
+     {protectedViews()}
       <Footer />
     </div>
   );

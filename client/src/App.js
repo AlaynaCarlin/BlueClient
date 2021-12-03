@@ -4,6 +4,7 @@ import Footer from "./Components/Site/Footer";
 import Auth from "./Components/auth/Auth";
 import Sitebar from "./Components/auth/Navbar";
 import LogIndex from "./Components/logs/LogIndex";
+import LogFood from "./Components/logs/CreateLog";
 
 function App() {
   const [sessionToken, setSessionToken] = useState("");
@@ -17,7 +18,7 @@ function App() {
   const updateToken = (newToken) => {
     localStorage.setItem("token", newToken);
     setSessionToken(newToken);
-    // console.log(sessionToken);
+    console.log(sessionToken);
   };
 
   const clearToken = () => {
@@ -35,9 +36,7 @@ function App() {
 
   return (
     <div className="App">
-     <SignUp />
-     <LogIn />
-     <LogFood />
+     {/* <LogFood /> */}
      <Sitebar clickLogout={clearToken} />
      {protectedViews()}
       <Footer />

@@ -5,6 +5,7 @@ import Auth from "./Components/auth/Auth";
 // import LogFood from "./Components/logs/CreateLog"; // Why is this commented out?
 import Sitebar from "./Components/auth/Navbar";
 import LogIndex from "./Components/logs/LogIndex";
+import LogFood from "./Components/logs/CreateLog";
 
 function App() {
   const [sessionToken, setSessionToken] = useState("");
@@ -18,7 +19,7 @@ function App() {
   const updateToken = (newToken) => {
     localStorage.setItem("token", newToken);
     setSessionToken(newToken);
-    // console.log(sessionToken);
+    console.log(sessionToken);
   };
 
   const clearToken = () => {
@@ -36,8 +37,9 @@ function App() {
 
   return (
     <div className="App">
-      <Sitebar clickLogout={clearToken} />
-      {protectedViews()}
+     {/* <LogFood /> */}
+     <Sitebar clickLogout={clearToken} />
+     {protectedViews()}
       <Footer />
     </div>
   );

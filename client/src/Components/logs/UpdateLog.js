@@ -2,21 +2,23 @@ import React, { useState } from "react";
 import { Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody } from "reactstrap";
 
 const UpdateFood = (props) => {
-    const [editWhat, setEditWhat] = useState(props.logToUpdate.what);
-    const [editWhere, setEditWhere] = useState(props.logToUpdate.where);
-    const [editCal, setEditCal] = useState(props.logToUpdate.calories);
-    const [editCat, setEditCat] = useState(props.logToUpdate.category);
-    const [editDate, setEditDate] = useState(props.logToUpdate.date);
-    const [editPhoto, setEditPhoto] = useState(props.logToUpdate.photo);
-    const [editFeel, setEditFeel] = useState(props.logToUpdate.feelings);
+    console.log(props);
+    const [editWhat, setEditWhat] = useState(props.logToUpdate);
+    const [editWhere, setEditWhere] = useState(props.logToUpdate);
+    const [editCal, setEditCal] = useState(props.logToUpdate);
+    const [editCat, setEditCat] = useState(props.logToUpdate);
+    const [editDate, setEditDate] = useState(props.logToUpdate);
+    const [editPhoto, setEditPhoto] = useState(props.logToUpdate);
+    const [editFeel, setEditFeel] = useState(props.logToUpdate);
+
     const foodUpdate = (event, log) => {
         event.preventDefault();
         fetch(`http://localhost:3000/log/${props.logToUpdate.id}`, {
             method: 'PUT',
-            body: JSON.stringify({ log: { what: what, where: where, calories: calories, category: category, date: date, photo: photo, feelings: feelings } }),
+            body: JSON.stringify({ log: { what: editWhat, where: editWhere, calories: editCal, category: editCat, date: editDate, photo: editPhoto, feelings: editFeel } }), //diving into response and setting the values to the state variables that you declared above
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${localStorage.getItem("token")}`
+                'Authorization': `Bearer ${props.token}`
             })
         }).then((res) => {
             props.fetchFoodLogs(); // Might be something to look at for line 30 in LogIndex if fetch isn't working

@@ -3,6 +3,7 @@ import {Container, Row, Col} from 'reactstrap';
 import GetLogs from './GetLogs';
 import LogFood from './CreateLog';
 import UpdateFood from './UpdateLog';
+
 const LogIndex = (props) => {
     const [foodLogs, setFoodLogs] = useState([]);
 
@@ -23,7 +24,7 @@ const LogIndex = (props) => {
     useEffect(() => {
         fetchLogs();
     }, [])
-
+    console.log(foodLogs)
     return(
         <Container>
             <Row>

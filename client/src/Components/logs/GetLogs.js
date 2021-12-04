@@ -25,7 +25,7 @@ const LogTable = (props) => {
         <>
         <h3>Log History</h3>
         <hr/>
-        <Table boxed>
+        <Table striped>
         <thead>
             <tr>
                 <th>#</th>

@@ -1,38 +1,44 @@
+/* body { 
+   background-image: url(./Components/assets/multicolor-fruit-splash-abstract-collection-fruits-slices-juice-rainbow-colors-healthy-food-drink-concept-isolated-157413565.jpg);
+   background-repeat: no-repeat;
+   background-size: cover;
+  /* }  this is for a background image but it shows across all pages*/ 
+/* background: #00C9FF;  /* fallback for old browsers */
+/* background: -webkit-linear-gradient(to right, #92FE9D, #00C9FF);  /* Chrome 10-25, Safari 5.1-6 */
+/* background: linear-gradient(to right, #92FE9D, #00C9FF); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7
+ /* }  This is for a background gradient that shows across all pages */
+
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
   }
+
+  /* .navbarButton {
+    display: flex !important;
+    align-items: right !important;
+    justify-content: right !important;
+    flex: 1;
+
+  } */
+
+.title {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+footer {
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height:50px;   /* Height of the footer */
+  
+} 
+footer p {
+  font-weight:bold ;
+  color: black;
+  text-align: center;
+  
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

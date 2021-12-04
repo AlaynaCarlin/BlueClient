@@ -44,7 +44,7 @@ const LogFood = (props) => {
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor="where" />
-                    <Input name="where" value={where} onChange={(e) => setResult(e.target.value)} />
+                    <Input name="where" value={where} onChange={(e) => setWhere(e.target.value)} />
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor="calories" />

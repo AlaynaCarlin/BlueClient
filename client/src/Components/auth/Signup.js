@@ -1,35 +1,36 @@
-import React, {useState} from 'react';
-import {Form, FormGroup, Label, Input, Button} from 'reactstrap';
+import React, { useState } from 'react';
+import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
 
 const Signup = (props) => {
-    
-    const [username, setUsername] = useState('');
-    const [password, setPassword]= useState('');
+    // console.log(props);
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
     const handleSubmit = (event) => {
         event.preventDefault();
         fetch("http://localhost:3000/user/register", {
             method: 'POST',
-            body: JSON.stringify({user:{username: username, password: password}}),
+            body: JSON.stringify({ user: { email: email, password: password } }),
             headers: new Headers({
                 'Content-Type': 'application/json'
             })
         }).then(
             (response) => response.json()
         ).then((data) => {
-            // console.log(data)
+            console.log(data);
             props.updateToken(data.sessionToken)
         })
     }
 
-    return(
+    return (
         <div>
             <h1>Sign Up</h1>
             <Form onSubmit={handleSubmit}>
 
                 <FormGroup>
-                    <Label htmlFor="username">Username</Label>
-                    <Input onChange={(e) => setUsername(e.target.value)} name="username" value={username} />
+                    <Label htmlFor="email">Email</Label>
+                    <Input onChange={(e) => setEmail(e.target.value)} name="email" value={email} />
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor="password">Password</Label>

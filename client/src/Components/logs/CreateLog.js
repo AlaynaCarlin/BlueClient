@@ -39,20 +39,20 @@ const LogFood = (props) => {
             <h3>Log a Meal</h3>
             <Form onSubmit={handleSubmit}>
                 <FormGroup>
-                    <Label htmlFor="what" >what I 8</Label>
-                    <Input name="what" type="text" placeholder="bagel" value={what} onChange={(e) => setWhat(e.target.value)} />
+                    <Label htmlFor="what" >What I 8</Label>
+                    <Input name="what" type="text" placeholder="I 8 That" value={what} onChange={(e) => setWhat(e.target.value)} />
                 </FormGroup>
                 <FormGroup>
-                    <Label htmlFor="where" >where I 8 it</Label>
-                    <Input name="where" type="text" placeholder="McDonald's" value={where} onChange={(e) => setWhere(e.target.value)} />
+                    <Label htmlFor="where" >Where I 8</Label>
+                    <Input name="where" type="text" placeholder="I 8 Here" value={where} onChange={(e) => setWhere(e.target.value)} />
                 </FormGroup>
                 <FormGroup>
-                    <Label htmlFor="calories" >calories consumed</Label>
-                    <Input name="calories" type="text" placeholder="240" value={calories} onChange={(e) => setCalories(e.target.value)} />
+                    <Label htmlFor="calories" >Calories consumed</Label>
+                    <Input name="calories" type="text" placeholder="'240'" value={calories} onChange={(e) => setCalories(e.target.value)} />
                 </FormGroup>
                 <FormGroup>
-                    <Label htmlFor="category" >category</Label>
-                    <Input type="select" name="category" value={category} onChange={(e) => setCategory(e.target.value)}>
+                    <Label htmlFor="category" >Category</Label>
+                    <Input name="category" type="select" placeholder="Click the Dropdown" value={category} onChange={(e) => setCategory(e.target.value)}>
                         <option value="Breakfast">Breakfast</option>
                         <option value="Lunch">Lunch</option>
                         <option value="Dinner">Dinner</option>
@@ -60,18 +60,18 @@ const LogFood = (props) => {
                     </Input>
                 </FormGroup>
                 <FormGroup>
-                    <Label htmlFor="date" >Date</Label>
+                    <Label htmlFor="date" >Date I 8</Label>
                     <Input name="date" type="date" placeholder="mm/dd/yyyy" value={date} onChange={(e) => setDate(e.target.value)} />
                 </FormGroup>
                 <FormGroup>
-                    <Label htmlFor="photo" >photo</Label>
-                    <Input name="photo" value={photo} onChange={(e) => setPhoto(e.target.value)} />
+                    <Label htmlFor="photo" >Photo Upload</Label>
+                    <Input name="photo" type="text" placeholder="-> Upload Here <-" value={photo} onChange={(e) => setPhoto(e.target.value)} />
                 </FormGroup>
                 <FormGroup>
-                    <Label htmlFor="feelings" >feels</Label>
-                    <Input name="feelings" type="text" placeholder="full" value={feelings} onChange={(e) => setFeelings(e.target.value)} />
+                    <Label htmlFor="feelings" >I'm Feeling (?)</Label>
+                    <Input name="feelings" type="text" placeholder="I feel full..." value={feelings} onChange={(e) => setFeelings(e.target.value)} />
                 </FormGroup>
-                <Button type="submit">Log</Button>
+                <Button type="submit">Log It!</Button>
             </Form>
         </>
     )

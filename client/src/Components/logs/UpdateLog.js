@@ -9,6 +9,7 @@ const UpdateFood = (props) => {
     const [editDate, setEditDate] = useState(props.logToUpdate.date);
     const [editPhoto, setEditPhoto] = useState(props.logToUpdate.photo);
     const [editFeel, setEditFeel] = useState(props.logToUpdate.feelings);
+
     const foodUpdate = (event, log) => { //check to see where the "log" is supposed to be called. 
         event.preventDefault();
         fetch(`http://localhost:3000/log/${props.logToUpdate.id}`, {

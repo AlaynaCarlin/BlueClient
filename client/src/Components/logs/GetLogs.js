@@ -21,11 +21,19 @@ const LogTable = (props) => {
         })
     }
 
+    // const dayMap = () => {
+    //     return props.foodLogs.filter((log, date) => {
+    //         return(
+
+    //         )
+    //     })
+    // }
+
     return(
         <>
         <h3>Log History</h3>
         <hr/>
-        <Table boxed>
+        <Table striped>
         <thead>
             <tr>
                 <th>#</th>

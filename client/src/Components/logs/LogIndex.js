@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-
 import {Container, Row, Col} from 'reactstrap';
 import GetLogs from './GetLogs';
 import LogFood from './CreateLog';

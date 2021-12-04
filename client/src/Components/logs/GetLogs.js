@@ -5,7 +5,8 @@ import {Table, Button} from 'reactstrap';
 const LogTable = (props) => {
 
     const logMapper = () => {
-        return props.foodLogs.map((log, index) => {
+        console.log(props.foodLogs)
+        return props.foodLogs?.map((log, index) => {
             return(
                 <tr key={index}>
                     <th scope="row">{log.id}</th>

@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import {Container, Row, Col} from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 import GetLogs from './GetLogs';
 import LogFood from './CreateLog';
 import UpdateFood from './UpdateLog';
+
 const LogIndex = (props) => {
     const [foodLogs, setFoodLogs] = useState([]);
+    const [updateActive, setUpdateActive] = useState(false);
+    const [logToUpdate, setLogToUpdate] = useState({});
 
     const fetchLogs = () => {
         fetch('http://localhost:3000/log/mine', {
@@ -13,27 +16,42 @@ const LogIndex = (props) => {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${props.token}`
             })
-        }).then ((res) => res.json())
-            .then ((logData) => {
+        }).then((res) => res.json())
+            .then((logData) => {
                 setFoodLogs(logData);
                 console.log(logData);
             })
+    }
+    const editUpdateLog = (foodLogs) => {
+        setLogToUpdate(foodLogs);
+        console.log(foodLogs);
+    }
+    const updateOn = () => {
+        setUpdateActive(true);
+    }
+    const updateOff = () => {
+        setUpdateActive(false);
     }
 
     useEffect(() => {
         fetchLogs();
     }, [])
 
-    return(
+console.log(foodLogs)
+    return (
+
         <Container>
             <Row>
                 <Col md="3">
                     <LogFood fetchLogs={fetchLogs} token={props.token}></LogFood>
                 </Col>
                 <Col md="9">
-                    <GetLogs foodLogs={foodLogs} fetchLogs={fetchLogs} token={props.token}/>
+                    <GetLogs foodLogs={foodLogs} fetchLogs={fetchLogs} token={props.token} />
                 </Col>
-                {/* <UpdateFood fetchLogs={fetchLogs} token={props.token}></UpdateFood> */}
+                <Col>
+                {updateActive ? <UpdateFood logToUpdate={logToUpdate}
+                updateOff={updateOff} token={props.token} fetchLogs={fetchLogs}/> : <></>} 
+                </Col>
             </Row>
         </Container>
     )

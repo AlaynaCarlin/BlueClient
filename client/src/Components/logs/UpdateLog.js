@@ -2,16 +2,15 @@ import React, { useState } from "react";
 import { Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody } from "reactstrap";
 
 const UpdateFood = (props) => {
-    console.log(props);
-    const [editWhat, setEditWhat] = useState(props.logToUpdate);
-    const [editWhere, setEditWhere] = useState(props.logToUpdate);
-    const [editCal, setEditCal] = useState(props.logToUpdate);
-    const [editCat, setEditCat] = useState(props.logToUpdate);
-    const [editDate, setEditDate] = useState(props.logToUpdate);
-    const [editPhoto, setEditPhoto] = useState(props.logToUpdate);
-    const [editFeel, setEditFeel] = useState(props.logToUpdate);
+    const [editWhat, setEditWhat] = useState(props.logToUpdate.what);
+    const [editWhere, setEditWhere] = useState(props.logToUpdate.where);
+    const [editCal, setEditCal] = useState(props.logToUpdate.calories);
+    const [editCat, setEditCat] = useState(props.logToUpdate.category);
+    const [editDate, setEditDate] = useState(props.logToUpdate.date);
+    const [editPhoto, setEditPhoto] = useState(props.logToUpdate.photo);
+    const [editFeel, setEditFeel] = useState(props.logToUpdate.feelings);
 
-    const foodUpdate = (event, log) => {
+    const foodUpdate = (event, log) => { //check to see where the "log" is supposed to be called. 
         event.preventDefault();
         fetch(`http://localhost:3000/log/${props.logToUpdate.id}`, {
             method: 'PUT',

@@ -32,7 +32,7 @@ const Signup = (props) => {
 
                 <FormGroup>
                     <Label htmlFor="email">Email</Label>
-                    <Input onChange={(e) => setEmail(e.target.value)} name="email" value={email} />
+                    <Input placeholder="ex: JaneDoe@email.com" onChange={(e) => setEmail(e.target.value)} name="email" value={email} />
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor="password">Password</Label>

@@ -92,7 +92,7 @@ const UpdateFood = (props) => {
                             onChange={(e) => setEditFeel(e.target.value)}
                         />
                     </FormGroup>
-                    <Button type="submit">Update the Log!</Button>
+                    <Button color="warning" onClick={() => {props.editUpdateLog(UpdateFood); props.updateOn()}}>Click to Update</Button>
                 </Form>
             </ModalBody>
         </Modal>

@@ -17,6 +17,12 @@ const LogTable = (props) => {
                     <td>{log.date}</td>
                     <td>{log.photo}</td>
                     <td>{log.feelings}</td>
+                    <td>
+                    <Button color="warning">Update</Button>
+                    </td>
+                    <td>
+                    <Button color="danger">Delete</Button>
+                    </td>
                 </tr>
             )
         })

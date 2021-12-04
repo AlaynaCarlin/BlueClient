@@ -13,10 +13,10 @@ const UpdateFood = (props) => {
         event.preventDefault();
         fetch(`http://localhost:3000/log/${props.logToUpdate.id}`, {
             method: 'PUT',
-            body: JSON.stringify({ log: { what: what, where: where, calories: calories, category: category, date: date, photo: photo, feelings: feelings } }),
+            body: JSON.stringify({ log: { what: editWhat, where: editWhere, calories: editCal, category: editCat, date: editDate, photo: editPhoto, feelings: editFeel } }), //diving into response and setting the values to the state variables that you declared above
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${localStorage.getItem("token")}`
+                'Authorization': `Bearer ${props.token}`
             })
         }).then((res) => {
             props.fetchFoodLogs(); // Might be something to look at for line 30 in LogIndex if fetch isn't working

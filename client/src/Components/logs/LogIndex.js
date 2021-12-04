@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
+
 import {Container, Row, Col} from 'reactstrap';
-// import GetLogs from './GetLogs';
+import GetLogs from './GetLogs';
 import LogFood from './CreateLog';
 import UpdateFood from './UpdateLog';
 const LogIndex = (props) => {
@@ -20,6 +21,10 @@ const LogIndex = (props) => {
             })
     }
 
+    useEffect(() => {
+        fetchLogs();
+    }, [])
+
     return(
         <Container>
             <Row>
@@ -27,8 +32,9 @@ const LogIndex = (props) => {
                     <LogFood fetchLogs={fetchLogs} token={props.token}></LogFood>
                 </Col>
                 <Col md="9">
-                <UpdateFood fetchLogs={fetchLogs} token={props.token}></UpdateFood>
+                    <GetLogs foodLogs={foodLogs} fetchLogs={fetchLogs} token={props.token}/>
                 </Col>
+                <UpdateFood fetchLogs={fetchLogs} token={props.token}></UpdateFood>
             </Row>
         </Container>
     )

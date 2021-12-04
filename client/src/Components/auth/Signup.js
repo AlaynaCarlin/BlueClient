@@ -2,16 +2,18 @@ import React, { useState } from 'react';
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
 
 const Signup = (props) => {
-    // console.log(props);
 
     const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-
+    const [password, setPassword]= useState('');
+  
     const handleSubmit = (event) => {
         event.preventDefault();
+        // console.log(email, password)
         fetch("http://localhost:3000/user/register", {
             method: 'POST',
-            body: JSON.stringify({ user: { email: email, password: password } }),
+
+            body: JSON.stringify({user:{email: email, password: password}}),
+
             headers: new Headers({
                 'Content-Type': 'application/json'
             })

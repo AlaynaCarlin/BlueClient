@@ -1,4 +1,4 @@
-import React, { useState, userEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 const LogFood = (props) => {
@@ -13,7 +13,7 @@ const LogFood = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        fetch('http://localhost:3000/log/', {
+        fetch('http://localhost:3000/log/create', {
             method: 'POST',
             body: JSON.stringify({ log: { what: what, where: where, calories: calories, category: category, date: date, photo: photo, feelings: feelings  } }),
             headers: new Headers({
@@ -25,12 +25,12 @@ const LogFood = (props) => {
                 console.log(logData);
                 setWhat('');
                 setWhere('');
-                setCalories('')
+                setCalories('');
                 setCategory('');
                 setDate('');
-                setPhoto('')
-                setFeelings('')
-                props.fetchLog();
+                setPhoto('');
+                setFeelings('');
+                props.fetchLogs();
             })
     }
 
@@ -39,19 +39,19 @@ const LogFood = (props) => {
             <h3>Log a Meal</h3>
             <Form onSubmit={handleSubmit}>
                 <FormGroup>
-                    <Label htmlFor="what" />
+                    <Label htmlFor="what" >what</Label>
                     <Input name="what" value={what} onChange={(e) => setWhat(e.target.value)} />
                 </FormGroup>
                 <FormGroup>
-                    <Label htmlFor="where" />
+                    <Label htmlFor="where" >where</Label>
                     <Input name="where" value={where} onChange={(e) => setWhere(e.target.value)} />
                 </FormGroup>
                 <FormGroup>
-                    <Label htmlFor="calories" />
+                    <Label htmlFor="calories" >calories</Label>
                     <Input name="calories" value={calories} onChange={(e) => setCalories(e.target.value)} />
                 </FormGroup>
                 <FormGroup>
-                    <Label htmlFor="category" />
+                    <Label htmlFor="category" >category</Label>
                     <Input type="select" name="category" value={category} onChange={(e) => setCategory(e.target.value)}>
                         <option value="Breakfast">Breakfast</option>
                         <option value="Lunch">Lunch</option>
@@ -60,15 +60,15 @@ const LogFood = (props) => {
                     </Input>
                 </FormGroup>
                 <FormGroup>
-                    <Label htmlFor="date" />
+                    <Label htmlFor="date" >Date</Label>
                     <Input name="date" value={date} onChange={(e) => setDate(e.target.value)} />
                 </FormGroup>
                 <FormGroup>
-                    <Label htmlFor="photo" />
+                    <Label htmlFor="photo" >photo</Label>
                     <Input name="photo" value={photo} onChange={(e) => setPhoto(e.target.value)} />
                 </FormGroup>
                 <FormGroup>
-                    <Label htmlFor="feelings" />
+                    <Label htmlFor="feelings" >feels</Label>
                     <Input name="feelings" value={feelings} onChange={(e) => setFeelings(e.target.value)} />
                 </FormGroup>
                 <Button type="submit">Log</Button>

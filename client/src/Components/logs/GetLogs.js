@@ -33,7 +33,7 @@ const LogTable = (props) => {
     setIsSpecific(!isSpecific)  //toggle to clear
   }
 
-  const findLastWeek = () => {
+  const lastSevenDays = () => {
     const dateToday = new Date(Date.now()).toISOString().slice(0, 10);
     const lastWeek = props.foodLogs.filter(log => {
         return log.date.slice(0, 10) ===  (dateToday);
@@ -44,13 +44,12 @@ const LogTable = (props) => {
   }
 
 
-
   return (
     <>
       <h3>Log History</h3>
       <Button onClick={findCurrentDay}>Current Day</Button>
-      <Button onClick={findLastWeek}>View Last Week</Button>
-      <Button>View Last 30 Days</Button>
+      <Button onClick={lastSevenDays}>Last Week</Button>
+      <Button>Last 30 Days</Button>
       
       <tbody></tbody>
       <hr />

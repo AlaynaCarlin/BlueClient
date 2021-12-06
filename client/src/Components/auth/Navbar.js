@@ -2,8 +2,8 @@ import React, {useState} from 'react';
 import {
     Collapse,
     Navbar,
-    // NavbarToggler,
-    // NavbarBrand,
+    NavbarToggler,
+    NavbarBrand,
     Nav,
     NavItem,
     Button
@@ -17,12 +17,12 @@ const Sitebar = (props) => {
     }
     return(
         <Navbar color="faded" light expand="md">
-            {/* <NavbarBrand href="/">I 8 That?</NavbarBrand>
-            <NavbarToggler onClick={toggle}/> */}
+            <NavbarBrand href="/">I 8 That?</NavbarBrand>
+            <NavbarToggler onClick={toggle}/>
             <Collapse isOpen={isOpen} navbar>
                 <Nav className="ml-auto" navbar >
                     <NavItem>
-                    <Button onClick={props.clickLogout}>Logout</Button>
+                    <Button className="navbarButton" onClick={props.clickLogout}>Logout</Button>
                     </NavItem>
                 </Nav>
             </Collapse>

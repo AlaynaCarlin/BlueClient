@@ -1,6 +1,14 @@
 import React, {useState} from "react";
 import { Table, Button } from "reactstrap";
 
+//create a function to pull the logs from the database by date
+
+// const mapStateToProps = (state) => {
+//     return {
+//         logs: state.logs,
+//     };
+// };
+
 const LogTable = (props) => {
   const [isSpecific, setIsSpecific] = useState(false)
   const [specificDateArr, setSpecificDateArr] = useState([])    //global variable
@@ -26,7 +34,7 @@ const LogTable = (props) => {
 
   const findCurrentDay = () => {        //compares dates and displays same dates
     const dateToday = new Date(Date.now()).toISOString().slice(0, 10);
-    // console.log(dateToday)
+    console.log(dateToday)
     setSpecificDateArr(props.foodLogs.filter(log => {       //filtered array = global array
         return log.date.slice(0,10) === dateToday       //filtered array is comparing all dates to today.
     })); 
@@ -37,12 +45,20 @@ const LogTable = (props) => {
     const dateToday = new Date(Date.now()).toISOString().slice(0, 10);
     const lastWeek = props.foodLogs.filter(log => {
         return log.date.slice(0, 10) ===  (dateToday);
+        //compare dates somehow if(dateA < dateB), might need to not convert to a string
     });
     // lastWeek.setDate(lastWeek.getDate() - 7);
     setSpecificDateArr(lastWeek)
     setIsSpecific(!isSpecific)
   }
 
+//   function lastSevenDays () {
+//     let result = [];
+//     for (let i=0; i<7; i++) {
+//         let d = new Date();
+//         d.setDate(d.getDate() - i);
+//         result.push(d.toISOString().slice(0, 6));
+//     }
 
   return (
     <>

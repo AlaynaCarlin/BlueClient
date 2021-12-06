@@ -56,6 +56,7 @@ const LogFood = (props) => {
                         <option value="Breakfast">Breakfast</option>
                         <option value="Lunch">Lunch</option>
                         <option value="Dinner">Dinner</option>
+                        <option value="Dinner">Dessert</option>
                         <option value="Snack">Snack</option>
                     </Input>
                 </FormGroup>

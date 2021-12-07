@@ -27,6 +27,7 @@ const LogTable = (props) => {
           <td>{log.date.slice(0, 10)}</td>
           <td>{log.photo}</td>
           <td>{log.feelings}</td>
+          
         </tr>
       );
     });

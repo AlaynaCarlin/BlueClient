@@ -17,10 +17,10 @@ const LogTable = (props) => {
     const deleteFoodLog = (id) => {
         fetch(`/api/logs/${id}`, {
             method: "DELETE",
-            headers: new Headers(
-                'Content-Type', 'application/json',
-                'Authorization', `Bearer ${localStorage.getItem('token')}`
-            )
+            headers: new Headers({
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${props.token}`
+            })
         })
             .then(res => res.json())
             .then(data => {
@@ -43,7 +43,7 @@ const LogTable = (props) => {
                     <td>{log.date.slice(0, 10)}</td>
                     <td>{log.photo}</td>
                     <td>{log.feelings}</td>
-                    <td><Button color="warning" onClick={() => {props.editFoodLogs(log.id); props.updateOn()}} >Update</Button></td>
+                    <td><Button color="warning" onClick={() => {props.editUpdateLog(log.id); props.updateOn()}} >Update</Button></td>
                     <td><Button color="danger" onClick={() => deleteFoodLog(log)}>Delete</Button></td>
                 </tr>
             );

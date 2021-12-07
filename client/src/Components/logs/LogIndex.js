@@ -46,11 +46,11 @@ console.log(foodLogs)
                     <LogFood fetchLogs={fetchLogs} token={props.token}></LogFood>
                 </Col>
                 <Col md="9">
-                    {foodLogs !== {} ? <GetLogs  foodLogs={foodLogs} fetchLogs={fetchLogs} token={props.token} /> : ""}
+                    {foodLogs !== {} ? <GetLogs  foodLogs={foodLogs} fetchLogs={fetchLogs} editUpdateLog={editUpdateLog} updateOn={updateOn} token={props.token} /> : ""}
                     {/*  */}
                 </Col>
                 <Col>
-                {updateActive ? <UpdateFood logToUpdate={logToUpdate}
+                {updateActive ? <UpdateFood logToUpdate={logToUpdate} editUpdateLog={editUpdateLog}
                 updateOff={updateOff} token={props.token} fetchLogs={fetchLogs}/> : <></>} 
                 </Col>
             </Row>

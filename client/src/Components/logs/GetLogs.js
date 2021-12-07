@@ -14,18 +14,17 @@ const LogTable = (props) => {
     const [isSpecific, setIsSpecific] = useState(false)
     const [specificDateArr, setSpecificDateArr] = useState([])    //global variable
 
-    const deleteFoodLog = (id) => {
-        fetch(`/api/logs/${id}`, {
+    const deleteFoodLog = (log) => {
+        fetch(`http://localhost:3000/log/delete/${log.id}`, {
             method: "DELETE",
             headers: new Headers({
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${props.token}`
             })
         })
-            .then(res => res.json())
             .then(data => {
                 console.log(data)
-                props.getLogs()
+                props.fetchLogs()
             })
             .catch(err => console.log(err))
     }
@@ -43,8 +42,8 @@ const LogTable = (props) => {
                     <td>{log.date.slice(0, 10)}</td>
                     <td>{log.photo}</td>
                     <td>{log.feelings}</td>
-                    <td><Button color="warning" onClick={() => {props.editUpdateLog(log.id); props.updateOn()}} >Update</Button></td>
-                    <td><Button color="danger" onClick={() => deleteFoodLog(log)}>Delete</Button></td>
+                    <td><Button color="warning" onClick={() => {props.editUpdateLog(log); props.updateOn()}} >Update</Button></td>
+                    <td><Button color="danger" onClick={() => {deleteFoodLog(log)}}>Delete</Button></td>
                 </tr>
             );
         });
@@ -69,7 +68,7 @@ const LogTable = (props) => {
     
     const lastWeek = props.foodLogs.filter(log => new Date(log.date) > sevenDaysAgo);
     // lastWeek.setDate(lastWeek.getDate() - 7);
-    console.log(props.foodLogs[0].date, sevenDaysAgo);
+    // console.log(props.foodLogs[0].date, sevenDaysAgo);
     console.log(lastWeek);
     setSpecificDateArr(lastWeek)
     setIsSpecific(!isSpecific)
@@ -124,9 +123,6 @@ const LogTable = (props) => {
         <tbody>
           {logMapper()}
         </tbody>
-          <tbody>
-            {deleteFoodLog()}
-          </tbody>
       </Table>
       
     </>

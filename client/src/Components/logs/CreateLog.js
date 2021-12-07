@@ -53,6 +53,7 @@ const LogFood = (props) => {
                 <FormGroup>
                     <Label htmlFor="category" >Category</Label>
                     <Input name="category" type="select" placeholder="Click the Dropdown" value={category} onChange={(e) => setCategory(e.target.value)}>
+                        <option></option>
                         <option value="Breakfast">Breakfast</option>
                         <option value="Lunch">Lunch</option>
                         <option value="Dinner">Dinner</option>

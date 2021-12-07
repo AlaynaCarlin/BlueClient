@@ -10,9 +10,11 @@ const UpdateFood = (props) => {
     const [editPhoto, setEditPhoto] = useState(props.logToUpdate.photo);
     const [editFeel, setEditFeel] = useState(props.logToUpdate.feelings);
 
-    const foodUpdate = (event, log) => { //check to see where the "log" is supposed to be called. 
+    const foodUpdate = (event, log) => { 
         event.preventDefault();
-        fetch(`http://localhost:3000/log/${props.logToUpdate.id}`, {
+        console.log(props.logToUpdate);
+        //* logToUpdate holds the id of the log. Also we were missing 'update' in the fetch
+        fetch(`http://localhost:3000/log/update/${props.logToUpdate.id}`, {
             method: 'PUT',
             body: JSON.stringify({ log: { what: editWhat, where: editWhere, calories: editCal, category: editCat, date: editDate, photo: editPhoto, feelings: editFeel } }), //diving into response and setting the values to the state variables that you declared above
             headers: new Headers({
@@ -20,7 +22,9 @@ const UpdateFood = (props) => {
                 'Authorization': `Bearer ${props.token}`
             })
         }).then((res) => {
-            props.fetchFoodLogs(); // Might be something to look at for line 30 in LogIndex if fetch isn't working
+            //* We need to call fetchLogs instead of fetchFoodLogs
+            // **
+            props.fetchLogs(); 
             props.updateOff();
         })
     }
@@ -60,11 +64,13 @@ const UpdateFood = (props) => {
                             name="category"
                             value={editCat}
                             onChange={(e) => setEditCat(e.target.value)}
+                            type='select'
                         >
                             <option></option>
                             <option value="Breakfast">Breakfast</option>
                             <option value="Lunch">Lunch</option>
                             <option value="Dinner">Dinner</option>
+                            <option value="Dessert">Dessert</option>
                             <option value="Snack">Snack</option>
                         </Input>
                     </FormGroup>
@@ -73,6 +79,7 @@ const UpdateFood = (props) => {
                         <Input
                             name="date"
                             value={editDate}
+                            type='date'
                             onChange={(e) => setEditDate(e.target.value)}
                         />
                     </FormGroup>
@@ -92,7 +99,9 @@ const UpdateFood = (props) => {
                             onChange={(e) => setEditFeel(e.target.value)}
                         />
                     </FormGroup>
-                    <Button color="warning" onClick={() => {props.editUpdateLog(UpdateFood); props.updateOn()}}>Click to Update</Button>
+                    {/* <Button color="warning" onClick={() => {props.editUpdateLog(UpdateFood)}}>Click to Update</Button> */}
+                    <Button type='submit'>Click to Update!</Button>
+                    {/*!On line 32 you day run updateFood when this form submits. so on this line you only need to say submit*/}
                 </Form>
             </ModalBody>
         </Modal>

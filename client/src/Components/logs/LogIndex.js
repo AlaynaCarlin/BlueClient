@@ -10,6 +10,7 @@ const LogIndex = (props) => {
     const [logToUpdate, setLogToUpdate] = useState({});
 
     const fetchLogs = async () => {
+        // **
         await fetch('http://localhost:3000/log/mine', {
             method: 'GET',
             headers: new Headers({
@@ -19,7 +20,7 @@ const LogIndex = (props) => {
         }).then((res) => res.json())
             .then((logData) => {
                 setFoodLogs(logData);
-                console.log(logData);
+                // console.log(logData);
             })
     }
     const editUpdateLog = (foodLogs) => {
@@ -46,7 +47,7 @@ console.log(foodLogs)
                     <LogFood fetchLogs={fetchLogs} token={props.token}></LogFood>
                 </Col>
                 <Col md="9">
-                    {foodLogs !== {} ? <GetLogs  foodLogs={foodLogs} fetchLogs={fetchLogs} token={props.token} /> : ""}
+                    {foodLogs !== {} ? <GetLogs  foodLogs={foodLogs} fetchLogs={fetchLogs} editUpdateLog={editUpdateLog} updateOn={updateOn} token={props.token} /> : ""}
                     {/*  */}
                 </Col>
                 <Col>

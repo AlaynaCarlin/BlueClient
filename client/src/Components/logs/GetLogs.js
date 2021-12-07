@@ -50,68 +50,87 @@ const LogTable = (props) => {
         });
     };
 
-    const findCurrentDay = () => {        //compares dates and displays same dates
-        const dateToday = new Date(Date.now()).toISOString().slice(0, 10);
-        // console.log(dateToday)
-        setSpecificDateArr(props.foodLogs.filter(log => {       //filtered array = global array
-            return log.date.slice(0, 10) === dateToday       //filtered array is comparing all dates to today.
-        }));
-        setIsSpecific(!isSpecific)  //toggle to clear
-    }
+  const findCurrentDay = () => {        //compares dates and displays same dates
+    const dateToday = new Date(Date.now()).toISOString().slice(0, 10);
+    
+    // console.log(props.foodLogs[4].date);
+    console.log(dateToday);
+    setSpecificDateArr(props.foodLogs.filter(log => {       //filtered array = global array
+        return log.date.slice(0,10) === dateToday  
+        //filtered array is comparing all dates to today.
+    })); 
+    setIsSpecific(!isSpecific)  //toggle to clear
+  }
 
-    const findLastWeek = () => {
-        const dateToday = new Date(Date.now()).toISOString().slice(0, 10);
-        const lastWeek = props.foodLogs.filter(log => {
-            return log.date.slice(0, 10) === (dateToday);
-        });
-        // lastWeek.setDate(lastWeek.getDate() - 7);
-        setSpecificDateArr(lastWeek)
-        setIsSpecific(!isSpecific)
-    }
+  const lastSevenDays = () => {
+    const date = new Date();
+    const sevenDaysAgo = new Date(date);
+    sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+    
+    const lastWeek = props.foodLogs.filter(log => new Date(log.date) > sevenDaysAgo);
+    // lastWeek.setDate(lastWeek.getDate() - 7);
+    console.log(props.foodLogs[0].date, sevenDaysAgo);
+    console.log(lastWeek);
+    setSpecificDateArr(lastWeek)
+    setIsSpecific(!isSpecific)
+  }
 
-    //   function lastSevenDays () {
-    //     let result = [];
-    //     for (let i=0; i<7; i++) {
-    //         let d = new Date();
-    //         d.setDate(d.getDate() - i);
-    //         result.push(d.toISOString().slice(0, 6));
-    //     }
+  const lastThirtyDays = () => {
+    const date = new Date();
+    const thirtyDaysAgo = new Date(date);
+    thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+    
+    const lastMonth = props.foodLogs.filter(log => new Date(log.date) > thirtyDaysAgo);
+    // lastWeek.setDate(lastWeek.getDate() - 7);
+    console.log(props.foodLogs[0].date, thirtyDaysAgo);
+    console.log(lastMonth);
+    setSpecificDateArr(lastMonth)
+    setIsSpecific(!isSpecific)
+  }
 
-    //     return(result.join(','));
-    // }
 
-    return (
-        <>
-            <h3>Log History</h3>
-            <Button onClick={findCurrentDay}>Current Day</Button>
-            <Button onClick={findLastWeek}>Last Week</Button>
-            <Button>Last 30 Days</Button>
-            <tbody></tbody>
-            <hr />
-            <Table striped>
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>What</th>
-                        <th>Where</th>
-                        <th>Calories</th>
-                        <th>Category</th>
-                        <th>Date</th>
-                        <th>Photo</th>
-                        <th>Feelings</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {logMapper()}
-                </tbody>
-                <tbody>
-                    {deleteFoodLog()}
-                </tbody>
 
-            </Table>
+//   function lastSevenDays () {
+//     let result = [];
+//     for (let i=0; i<7; i++) {
+//         let d = new Date();
+//         d.setDate(d.getDate() - i);
+//         result.push(d.toISOString().slice(0, 6));
+//     }
 
-        </>
-    );
+
+  return (
+    <>
+      <h3>Log History</h3>
+      <Button onClick={findCurrentDay}>Current Day</Button>
+      <Button onClick={lastSevenDays}>Last Week</Button>
+      <Button onClick={lastThirtyDays}>Last 30 Days</Button>
+      
+      <tbody></tbody>
+      <hr />
+      <Table striped>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>What</th>
+            <th>Where</th>
+            <th>Calories</th>
+            <th>Category</th>
+            <th>Date</th>
+            <th>Photo</th>
+            <th>Feelings</th>
+          </tr>
+        </thead>
+        <tbody>
+          {logMapper()}
+        </tbody>
+          <tbody>
+            {deleteFoodLog()}
+          </tbody>
+      </Table>
+      
+    </>
+  );
 };
 
 export default LogTable;

@@ -44,7 +44,7 @@ const Signup = (props) => {
             onChange={(e) => setEmail(e.target.value)}
             value={email}
           />
-                  
+
           <Label for="exampleEmail">Email</Label>
         </FormGroup>{" "}
         <FormGroup floating>

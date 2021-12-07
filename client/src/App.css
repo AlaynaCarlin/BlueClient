@@ -1,0 +1,46 @@
+body { 
+   /* background-image: url(./Components/assets/multicolor-fruit-splash-abstract-collection-fruits-slices-juice-rainbow-colors-healthy-food-drink-concept-isolated-157413565.jpg);
+   background-repeat: no-repeat;
+   background-size: cover; */
+  /* }  this is for a background image but it shows across all pages*/ 
+background: #00C9FF;  
+background: -webkit-linear-gradient(to right, #92FE9D, #00C9FF);  
+background: linear-gradient(to right, #92FE9D, #00C9FF); 
+ }  
+ /* This is for a background gradient that shows across all pages */ 
+
+
+.App {
+  text-align: center;
+  }
+
+  /* .navbarButton {
+    display: flex !important;
+    align-items: right !important;
+    justify-content: right !important;
+    flex: 1;
+
+  } */
+
+.title {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  
+}
+
+
+footer {
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height:50px;   /* Height of the footer */
+  
+} 
+footer p {
+  font-weight:bold ;
+  color: black;
+  text-align: center;
+  
+}
+
+

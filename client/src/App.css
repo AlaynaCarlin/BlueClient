@@ -1,12 +1,9 @@
-body { 
-   /* background-image: url(./Components/assets/multicolor-fruit-splash-abstract-collection-fruits-slices-juice-rainbow-colors-healthy-food-drink-concept-isolated-157413565.jpg);
-   background-repeat: no-repeat;
-   background-size: cover; */
-  /* }  this is for a background image but it shows across all pages*/ 
+/* body { 
 
- }  
- /* This is for a background gradient that shows across all pages */ 
+  }  this is for a background image but it shows across all pages 
 
+ }   */
+ 
 .logStyle{
   background-image:url('./Components/assets/360_F_199166676_6YRYfiq1sFpEjHv5NnB7AyU6Fk7J6ct2.jpg') ;
   /* background-repeat: no-repeat; */
@@ -15,6 +12,24 @@ body {
   min-width: 100%;
   min-height: 100%;
   /* background-position: center; */
+}
+
+.createLogs{
+  font-family: cursive;
+  padding: 1vw;
+}
+
+.getLogs{
+  font-family: cursive;
+  padding: 2vw;
+  margin-top: 10vh;
+}
+
+#logList{
+  width: 20vw;
+  /* padding:5vw; */
+  /* border: black 2px; */
+  display: flex;
 }
 
 .App {

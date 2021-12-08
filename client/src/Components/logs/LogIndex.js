@@ -41,7 +41,7 @@ const LogIndex = (props) => {
 console.log(foodLogs)
     return (
 
-        <Container>
+        <Container className='logStyle'>
             <Row>
                 <Col md="3">
                     <LogFood fetchLogs={fetchLogs} token={props.token}></LogFood>

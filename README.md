@@ -4,25 +4,23 @@ Project Name
 
 Technology Used:
 
-              [ note technology and purposes ]
+              Using Trello and daily stand-up communications to inform our team-mates of successes, challenges, and needs.
 
-Team Member #1  [NAME]
+Team Member #1  Ben Marlowe
 
-              GitHub, LinkedIn, Portfolio links
+              https://github.com/MzArlowe | https://www.linkedin.com/in/ben-marlowe/ | https://github.com/MzArlowe/mzarlowe.github.io
 
 Assigned Tasks
-Endpoint 1
-Completion Date: WIP / [completion date]
-[date]: [focused items / files] */consider your commit message
-[date]: [focused items / files]
-[date]: [focused items / files]
-Ex: 11/29: Navbar.jsx – build out routing and styling.
-Endpoint 2
-Completion Date: WIP / [completion date]
-[date]: [focused items / files]
-[date]: [focused items / files]
-*additional / optional
- 
+
+o Endpoint 1 Create Log | Endpoint 2 Update
+
+=> Completion Date: 12/07/2021
+
+- [12/03/2021]: UpdateLog – Uploaded rough code for Update.
+- [12/06/2021]: UpdateLog/LogIndex - Worked on Code for Update and got it partially working
+- [12/07/2021]: Update – finally functioning update
+
+---
 
 Team Member #2  [Alayna Carlin]
 
@@ -43,18 +41,22 @@ Completion Date: WIP / [12/7/2021]
 
 Team Member #3  [Renee Godby]
 
-              GitHub: https://github.com/reneegodby
-              LinkedIn: www.linkedin.com/in/renee-godby
-              Portfolio:https://reneegodby.github.io/
+              GitHub: https://github.com/reneegodby | LinkedIn: www.linkedin.com/in/renee-godby | Portfolio:https://reneegodby.github.io/
 
 Assigned Tasks
-Sign-up
-Completion Date: [12/07/2021]
-[12/03/2021]: [created folder structure]
-[12/04/2021]: [created authorization and sign-up]
-[12/04/2021]: [created nav bar and footer]
-[12/07/2021]: [created form validation]
-Login
-Completion Date: [12/07/2021]
-[12/04/2021]: [created authorization and login]
-[12/07/2021]: [created form validation]
+
+o Sign-up
+
+=> Completion Date: 12/07/2021
+- [12/03/2021]: [created folder structure]
+- [12/04/2021]: [created authorization and sign-up]
+- [12/04/2021]: [created nav bar and footer]
+- [12/07/2021]: [created form validation]
+
+o Login
+
+=> Completion Date: 12/07/2021
+- [12/04/2021]: [created authorization and login]
+- [12/07/2021]: [created form validation]
+
+---

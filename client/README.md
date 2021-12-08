@@ -51,7 +51,7 @@ Assigned Tasks
 
 o Sign-up
 
-=> Completion Date: [12/07/2021]
+=> Completion Date: 12/07/2021
 - [12/03/2021]: [created folder structure]
 - [12/04/2021]: [created authorization and sign-up]
 - [12/04/2021]: [created nav bar and footer]
@@ -59,7 +59,7 @@ o Sign-up
 
 o Login
 
-=> Completion Date: [12/07/2021]
+=> Completion Date: 12/07/2021
 - [12/04/2021]: [created authorization and login]
 - [12/07/2021]: [created form validation]
 

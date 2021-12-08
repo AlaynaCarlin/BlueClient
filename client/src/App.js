@@ -7,8 +7,6 @@ import LogIndex from "./Components/logs/LogIndex";
 
 // import backgroundImage from "./Components/assets/multicolor-fruit-splash-abstract-collection-fruits-slices-juice-rainbow-colors-healthy-food-drink-concept-isolated-157413565.jpg";
 
-
-
 function App() {
   const [sessionToken, setSessionToken] = useState("");
 
@@ -38,12 +36,14 @@ function App() {
   };
 
   return (
-    // <div style={{ backgroundImage: `url(${backgroundImage})` }}>
-      <div className="App">
-        <Sitebar clickLogout={clearToken} />
+    <div className="App">
+      <div className="App-header">
+        <Sitebar clickLogout={clearToken} updateToken={updateToken} />
+        {/* <img src={logo} className="App-logo" alt="logo" /> */}
         {protectedViews()}
-        <Footer />
       </div>
+      <Footer className="loginStyle" />
+    </div>
     // </div>
   );
 }

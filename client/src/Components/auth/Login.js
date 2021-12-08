@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 
 const Login = (props) => {
@@ -17,14 +18,13 @@ const Login = (props) => {
       .then((response) => response.json())
       .then((data) => {
         props.updateToken(data.sessionToken);
+        props.toggle()
       });
-
   };
 
   return (
     <div>
-      <h1 className="title">Login</h1>
-      <Form inline onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit}>
         <FormGroup floating>
           <Input
             onChange={(e) => setEmail(e.target.value)}
@@ -47,10 +47,9 @@ const Login = (props) => {
           />
           <Label for="examplePassword">Password</Label>
         </FormGroup>{" "}
-        <Button type="submit">Login</Button>
+      <Button type="submit">Login</Button>
       </Form>
     </div>
-    
   );
 };
 

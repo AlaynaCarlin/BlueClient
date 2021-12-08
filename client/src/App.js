@@ -38,7 +38,7 @@ function App() {
   return (
     <div className="App">
       <div className="App-header">
-        <Sitebar clickLogout={clearToken} />
+        <Sitebar clickLogout={clearToken} updateToken={updateToken} />
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
         {protectedViews()}
       </div>

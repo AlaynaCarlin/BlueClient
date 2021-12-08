@@ -5,8 +5,8 @@ import {
   Label,
   Input,
   Button,
-//   FormFeedback,
-//   FormText
+  FormFeedback,
+  FormText,
 } from "reactstrap";
 
 const Signup = (props) => {
@@ -31,6 +31,18 @@ const Signup = (props) => {
         props.updateToken(data.sessionToken);
       });
   };
+  const validPassword = () => {
+    return (
+      password.length > 8 &&
+      password.match(/[A-Z]/) !== null &&
+      password.match(/[a-z]/) !== null &&
+      password.match(/[0-9]/) !== null
+    );
+  };
+
+  const validEmail = () => {
+    return email.match(/@/) !== null;
+  };
 
   return (
     <div>
@@ -43,7 +55,11 @@ const Signup = (props) => {
             placeholder="Email"
             onChange={(e) => setEmail(e.target.value)}
             value={email}
+            type="email"
+            className="form-control"
+            // valid if validEmail
           />
+          <FormFeedback></FormFeedback>
 
           <Label for="exampleEmail">Email</Label>
         </FormGroup>{" "}
@@ -54,10 +70,16 @@ const Signup = (props) => {
             placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
             value={password}
+            type="password"
+            className="form-control"
+            // valid if validPassword
+            // invalid 
           />
           <Label for="examplePassword">Password</Label>
         </FormGroup>{" "}
-        <Button type="submit">Sign Up</Button>
+        <Button type="submit" disabled={!validEmail() || !validPassword()}>
+          Sign Up
+        </Button>
       </Form>
     </div>
   );

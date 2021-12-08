@@ -24,22 +24,21 @@ Completion Date: WIP / [completion date]
 *additional / optional
  
 
-Team Member #2  [NAME]
+Team Member #2  [Alayna Carlin]
 
-              GitHub, LinkedIn, Portfolio links
+              https://github.com/AlaynaCarlin, https://www.linkedin.com/in/alayna-carlin-865326221/, https://github.com/AlaynaCarlin/AlaynaCarlin.github.io
 
 Assigned Tasks
-Endpoint 1
-Completion Date: WIP / [completion date]
-[date]: [focused items / files] */consider your commit message
-[date]: [focused items / files]
-[date]: [focused items / files]
+GET
+Completion Date: WIP / [12/6/2021]
+[12/4/2021 - 12/6/2021]: built get all logs for the day 
+[12/6/2021]: built get all logs for the past week
+[12/6/2021]: built get all logs for the past month
 Ex: 11/29: Navbar.jsx – build out routing and styling.
-Endpoint 2
-Completion Date: WIP / [completion date]
-[date]: [focused items / files]
-[date]: [focused items / files]
-*additional / optional
+DELETE
+Completion Date: WIP / [12/7/2021]
+[12/7/2021]: created delete buttons and bones
+[12/7/2021]: debugged delete functionality 
  
 
 Team Member #3  [Renee Godby]

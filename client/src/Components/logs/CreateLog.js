@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input, Row, Col } from 'reactstrap';
 
 const LogFood = (props) => {
     const [what, setWhat] = useState('');
@@ -38,19 +38,20 @@ const LogFood = (props) => {
         <>
             <h3>Log a Meal</h3>
             <Form onSubmit={handleSubmit}>
-                <FormGroup>
+                <Row>
+                <Col>
                     <Label htmlFor="what" >What I 8</Label>
                     <Input name="what" type="text" placeholder="I 8 That" value={what} onChange={(e) => setWhat(e.target.value)} />
-                </FormGroup>
-                <FormGroup>
+                </Col>
+                <Col>
                     <Label htmlFor="where" >Where I 8</Label>
                     <Input name="where" type="text" placeholder="I 8 Here" value={where} onChange={(e) => setWhere(e.target.value)} />
-                </FormGroup>
-                <FormGroup>
-                    <Label htmlFor="calories" >Calories consumed</Label>
+                </Col>
+                <Col>
+                    <Label htmlFor="calories" >Calories</Label>
                     <Input name="calories" type="text" placeholder="'240'" value={calories} onChange={(e) => setCalories(e.target.value)} />
-                </FormGroup>
-                <FormGroup>
+                </Col>
+                <Col>
                     <Label htmlFor="category" >Category</Label>
                     <Input name="category" type="select" placeholder="Click the Dropdown" value={category} onChange={(e) => setCategory(e.target.value)}>
                         <option></option>
@@ -60,19 +61,20 @@ const LogFood = (props) => {
                         <option value="Dinner">Dessert</option>
                         <option value="Snack">Snack</option>
                     </Input>
-                </FormGroup>
-                <FormGroup>
+                </Col>
+                <Col>
                     <Label htmlFor="date" >Date I 8</Label>
                     <Input name="date" type="date" placeholder="mm/dd/yyyy" value={date} onChange={(e) => setDate(e.target.value)} />
-                </FormGroup>
-                <FormGroup>
+                </Col>
+                <Col>
                     <Label htmlFor="photo" >Photo Upload</Label>
                     <Input name="photo" type="text" placeholder="-> Upload Here <-" value={photo} onChange={(e) => setPhoto(e.target.value)} />
-                </FormGroup>
-                <FormGroup>
+                </Col>
+                <Col>
                     <Label htmlFor="feelings" >I'm Feeling (?)</Label>
                     <Input name="feelings" type="text" placeholder="I feel full..." value={feelings} onChange={(e) => setFeelings(e.target.value)} />
-                </FormGroup>
+                </Col>
+                </Row>
                 <Button type="submit">Log It!</Button>
             </Form>
         </>

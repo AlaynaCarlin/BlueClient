@@ -42,19 +42,17 @@ console.log(foodLogs)
     return (
 
         <Container className='logStyle'>
-            <Row>
-                <Col md="3">
+                <Row className='createLogs'>
                     <LogFood fetchLogs={fetchLogs} token={props.token}></LogFood>
-                </Col>
-                <Col md="9">
+                </Row>
+                <Row className='getLogs'>
                     {foodLogs !== {} ? <GetLogs  foodLogs={foodLogs} fetchLogs={fetchLogs} editUpdateLog={editUpdateLog} updateOn={updateOn} token={props.token} /> : ""}
                     {/*  */}
-                </Col>
+                </Row>
                 <Col>
                 {updateActive ? <UpdateFood logToUpdate={logToUpdate}
                 updateOff={updateOff} token={props.token} fetchLogs={fetchLogs}/> : <></>} 
                 </Col>
-            </Row>
         </Container>
     )
 }

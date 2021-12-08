@@ -18,6 +18,7 @@ const Login = (props) => {
       .then((data) => {
         props.updateToken(data.sessionToken);
       });
+
   };
 
   return (
@@ -47,6 +48,7 @@ const Login = (props) => {
         <Button type="submit">Login</Button>
       </Form>
     </div>
+    
   );
 };
 

@@ -16,6 +16,9 @@ function App() {
     if (localStorage.getItem("token")) {
       setSessionToken(localStorage.getItem("token"));
     }
+
+
+    
   }, []);
 
   const updateToken = (newToken) => {
@@ -40,8 +43,11 @@ function App() {
   return (
     // <div style={{ backgroundImage: `url(${backgroundImage})` }}>
       <div className="App">
+        <div className="App-header">
         <Sitebar clickLogout={clearToken} />
+        {/* <img src={logo} className="App-logo" alt="logo" /> */}
         {protectedViews()}
+        </div>
         <Footer />
       </div>
     // </div>

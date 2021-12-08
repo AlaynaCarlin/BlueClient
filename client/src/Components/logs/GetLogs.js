@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Table, Button } from "reactstrap";
+import { Table, Button, Row, Col } from "reactstrap";
 import UpdateFood from "./UpdateLog";
 
 //create a function to pull the logs from the database by date
@@ -33,18 +33,32 @@ const LogTable = (props) => {
         let logs = isSpecific ? specificDateArr : props.foodLogs //isSpecific by default is false and we need to check if it's true or false so we know what array to map over. If true, map over specificDateArr. If false, map over entire foodLog array
         return logs.map((log, index) => {       //logs is a variable variable. Checks btwn sets of data
             return (
-                <tr key={index}>
-                    <th scope="row">{log.id}</th>
-                    <td>{log.what}</td>
-                    <td>{log.where}</td>
-                    <td>{log.calories}</td>
-                    <td>{log.category}</td>
-                    <td>{log.date.slice(0, 10)}</td>
-                    <td>{log.photo}</td>
-                    <td>{log.feelings}</td>
-                    <td><Button color="warning" onClick={() => {props.editUpdateLog(log); props.updateOn()}} >Update</Button></td>
-                    <td><Button color="danger" onClick={() => {deleteFoodLog(log)}}>Delete</Button></td>
-                </tr>
+              <div id='logList'>
+              <ul style={{border:'2px solid black', width:'18vw'}}>
+                <li>Log {index}</li>
+                <li>{log.what}</li>
+                <li>{log.where}</li>
+                <li>{log.calories}</li>
+                <li>{log.category}</li>
+                <li>{log.date.slice(0, 10)}</li>
+                <li>{log.photo}</li>
+                <li>{log.feelings}</li>
+                <li style={{padding:'0.5vw'}}><Button style={{color:'orange'}} onClick={() => {props.editUpdateLog(log); props.updateOn()}} >Update</Button></li>
+                <li style={{padding:'0.5vw'}}><Button style={{color:'yellow'}} onClick={() => {deleteFoodLog(log)}}>Delete</Button></li>
+              </ul>
+              </div>
+                // <tr key={index}>
+                //     <th scope="row">{log.id}</th>
+                //     <td>{log.what}</td>
+                //     <td>{log.where}</td>
+                //     <td>{log.calories}</td>
+                //     <td>{log.category}</td>
+                //     <td>{log.date.slice(0, 10)}</td>
+                //     <td>{log.photo}</td>
+                //     <td>{log.feelings}</td>
+                //     <td><Button color="warning" onClick={() => {props.editUpdateLog(log); props.updateOn()}} >Update</Button></td>
+                //     <td><Button color="danger" onClick={() => {deleteFoodLog(log)}}>Delete</Button></td>
+                // </tr>
             );
         });
     };
@@ -101,13 +115,14 @@ const LogTable = (props) => {
   return (
     <>
       <h3>Log History</h3>
-      <Button onClick={findCurrentDay}>Current Day</Button>
-      <Button onClick={lastSevenDays}>Last Week</Button>
-      <Button onClick={lastThirtyDays}>Last 30 Days</Button>
-      
+      <Row>
+      <Col><Button onClick={findCurrentDay}>Current Day</Button></Col>
+      <Col><Button onClick={lastSevenDays}>Last Week</Button></Col>
+      <Col><Button onClick={lastThirtyDays}>Last 30 Days</Button></Col>
+      </Row>
       <tbody></tbody>
       <hr />
-      <Table striped>
+      {/* <Table striped style={{display:"flex"}}>
         <thead>
           <tr>
             <th>#</th>
@@ -120,10 +135,13 @@ const LogTable = (props) => {
             <th>Feelings</th>
           </tr>
         </thead>
+        </Table> */}
         <tbody>
+          <Row>
           {logMapper()}
+          </Row>
         </tbody>
-      </Table>
+      
       
     </>
   );

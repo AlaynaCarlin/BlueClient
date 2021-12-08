@@ -4,24 +4,21 @@ Project Name
 
 Technology Used:
 
-              [ note technology and purposes ]
+              Using Trello and daily stand-up communications to inform our team-mates of successes, challenges, and needs.
 
-Team Member #1  [NAME]
+Team Member #1  Ben Marlowe
 
-              GitHub, LinkedIn, Portfolio links
+              https://github.com/MzArlowe | https://www.linkedin.com/in/ben-marlowe/ | https://github.com/MzArlowe/mzarlowe.github.io
 
 Assigned Tasks
-Endpoint 1
-Completion Date: WIP / [completion date]
-[date]: [focused items / files] */consider your commit message
-[date]: [focused items / files]
-[date]: [focused items / files]
-Ex: 11/29: Navbar.jsx – build out routing and styling.
-Endpoint 2
-Completion Date: WIP / [completion date]
-[date]: [focused items / files]
-[date]: [focused items / files]
-*additional / optional
+
+o Endpoint 1 Update | Endpoint 2 Delete
+
+=> Completion Date: 12/07/2021
+
+[12/03/2021]: UpdateLog – Uploaded rough code for Update. Delete came later.
+[12/06/2021]: UpdateLog/LogIndex - Worked on Code for Update and got it partially working
+[12/07/2021]: Update/Delete – functioning delete and update
  
 
 Team Member #2  [NAME]

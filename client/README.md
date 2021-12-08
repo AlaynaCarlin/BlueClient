@@ -12,13 +12,13 @@ Team Member #1  Ben Marlowe
 
 Assigned Tasks
 
-o Endpoint 1 Update | Endpoint 2 Delete
+o Endpoint 1 Create Log | Endpoint 2 Update
 
 => Completion Date: 12/07/2021
 
-- [12/03/2021]: UpdateLog – Uploaded rough code for Update. Delete came later.
+- [12/03/2021]: UpdateLog – Uploaded rough code for Update.
 - [12/06/2021]: UpdateLog/LogIndex - Worked on Code for Update and got it partially working
-- [12/07/2021]: Update/Delete – functioning delete and update
+- [12/07/2021]: Update – finally functioning update
 
 ---
 
@@ -48,14 +48,16 @@ Team Member #3  [Renee Godby]
               GitHub: https://github.com/reneegodby | LinkedIn: www.linkedin.com/in/renee-godby | Portfolio:https://reneegodby.github.io/
 
 Assigned Tasks
+
 o Sign-up
+
 => Completion Date: [12/07/2021]
 - [12/03/2021]: [created folder structure]
 - [12/04/2021]: [created authorization and sign-up]
 - [12/04/2021]: [created nav bar and footer]
 - [12/07/2021]: [created form validation]
 
-Login
+o Login
 
 => Completion Date: [12/07/2021]
 - [12/04/2021]: [created authorization and login]

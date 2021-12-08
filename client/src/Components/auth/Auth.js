@@ -7,7 +7,9 @@ import Login from './Login';
 
 const Auth = (props) => {
     return (
-        <Container className="auth-container">
+        
+        <div className="loginStyle">
+            <Container>
             <Row>
                 <Col md="6">
                     <Signup updateToken={props.updateToken} />
@@ -16,7 +18,9 @@ const Auth = (props) => {
                     <Login updateToken={props.updateToken} />
                 </Col>
             </Row>
-        </Container>
+            </Container>
+        </div>
+        
     )
 }
 export default Auth;

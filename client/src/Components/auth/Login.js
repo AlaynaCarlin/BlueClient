@@ -32,6 +32,7 @@ const Login = (props) => {
             name="email"
             placeholder="Email"
             value={email}
+            className="form-control"
           />
           <Label for="exampleEmail">Email</Label>
         </FormGroup>{" "}
@@ -42,6 +43,7 @@ const Login = (props) => {
             name="password"
             placeholder="Password"
             value={password}
+            className="form-control"
           />
           <Label for="examplePassword">Password</Label>
         </FormGroup>{" "}

@@ -3,6 +3,7 @@ import { Container, Row, Col } from 'reactstrap';
 import GetLogs from './GetLogs';
 import LogFood from './CreateLog';
 import UpdateFood from './UpdateLog';
+import APIURL from '../../helpers/environment';
 
 const LogIndex = (props) => {
     const [foodLogs, setFoodLogs] = useState([]);
@@ -11,7 +12,7 @@ const LogIndex = (props) => {
 
     const fetchLogs = async () => {
         // **
-        await fetch('http://localhost:3000/log/mine', {
+        await fetch(`${APIURL}/log/mine`, {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',

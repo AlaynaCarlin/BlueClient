@@ -4,10 +4,12 @@
   text-align: center;
 }
 
+/* Navbar */
 .navbarButton {
   margin-right: 10px;
 }
 
+/* Sign up Box */
 .auth-container {
   display: flex;
   justify-content: center;
@@ -23,6 +25,7 @@
   background-color: rgba(128, 128, 128, 0.1) !important;
 }
 
+/* SignUp pg background */
 .loginStyle {
   background-image: url(./Components/assets/food-diary-template.jpg);
   background-repeat: no-repeat;
@@ -31,6 +34,7 @@
   min-width: 100%;
 }
 
+/* signup box title */
 .title {
   margin-top: 2vh;
   margin-bottom: 4vh;

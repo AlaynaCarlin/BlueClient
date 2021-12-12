@@ -28,15 +28,15 @@ Team Member #2  [Alayna Carlin]
 
 Assigned Tasks
 GET
-Completion Date: WIP / [12/6/2021]
-[12/4/2021 - 12/6/2021]: built get all logs for the day 
-[12/6/2021]: built get all logs for the past week
-[12/6/2021]: built get all logs for the past month
+=> Completion Date: WIP / [12/6/2021]
+- [12/4/2021 - 12/6/2021]: built get all logs for the day 
+- [12/6/2021]: built get all logs for the past week
+- [12/6/2021]: built get all logs for the past month
 Ex: 11/29: Navbar.jsx – build out routing and styling.
 DELETE
-Completion Date: WIP / [12/7/2021]
-[12/7/2021]: created delete buttons and bones
-[12/7/2021]: debugged delete functionality 
+ => Completion Date: WIP / [12/7/2021]
+- [12/7/2021]: created delete buttons and bones
+- [12/7/2021]: debugged delete functionality 
  
 
 Team Member #3  [Renee Godby]

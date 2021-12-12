@@ -1,3 +1,4 @@
+
 /* Home page */
 
 .App {
@@ -69,16 +70,19 @@
   /* background-position: center; */
 }
 
+
 .createLogs {
   font-family: cursive;
   padding: 1vw;
 }
+
 
 .getLogs {
   font-family: cursive;
   padding: 2vw;
   margin-top: 10vh;
 }
+
 
 #logList {
   width: 20vw;
@@ -100,3 +104,4 @@ footer p {
   color: black;
   text-align: center;
 }
+

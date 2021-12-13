@@ -33,6 +33,7 @@ GET
 - [12/4/2021 - 12/6/2021]: built get all logs for the day 
 - [12/6/2021]: built get all logs for the past week
 - [12/6/2021]: built get all logs for the past month
+- [12/13/2021]: styled logs on log page. added scrolling.
 Ex: 11/29: Navbar.jsx – build out routing and styling.
 DELETE
 => Completion Date: WIP / [12/7/2021]

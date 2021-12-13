@@ -19,6 +19,7 @@ o Endpoint 1 Create Log | Endpoint 2 Update
 - [12/03/2021]: UpdateLog – Uploaded rough code for Update.
 - [12/06/2021]: UpdateLog/LogIndex - Worked on Code for Update and got it partially working
 - [12/07/2021]: Update – finally functioning update
+-	[12/10/2021]: Alayna and Renee deployed our Client on Heroku. I was stuck at work.
 
 ---
 
@@ -52,6 +53,8 @@ o Sign-up
 - [12/04/2021]: [created authorization and sign-up]
 - [12/04/2021]: [created nav bar and footer]
 - [12/07/2021]: [created form validation]
+- [12/10/2021]: Alayna and Renee deployed our Client on Heroku.
+- [12/13/2021]: Fixed footer to disappear in log pg and stay sticky on home pg. Also made navbar component smaller. 
 
 o Login
 

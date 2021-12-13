@@ -74,6 +74,8 @@
 .createLogs {
   font-family: cursive;
   padding: 1vw;
+  position:relative;
+  top: 0vh;
 }
 
 
@@ -81,6 +83,8 @@
   font-family: cursive;
   padding: 2vw;
   margin-top: 10vh;
+  position: relative;
+  top: -10vh;
 }
 
 
@@ -89,6 +93,10 @@
   /* padding:5vw; */
   /* border: black 2px; */
   display: flex;
+  overflow: 'scroll';
+  scroll-behavior: smooth;
+  font-size: 1.25vw;
+  justify-content: left;
 }
 
 /* FOOTER */

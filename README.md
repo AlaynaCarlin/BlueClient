@@ -53,7 +53,8 @@ o Sign-up
 - [12/04/2021]: [created authorization and sign-up]
 - [12/04/2021]: [created nav bar and footer]
 - [12/07/2021]: [created form validation]
--	[12/10/2021]: Alayna and Renee deployed our Client on Heroku.
+- [12/10/2021]: Alayna and Renee deployed our Client on Heroku.
+- [12/13/2021]: Fixed footer to disappear in log pg and stay sticky on home pg. Also made navbar component smaller. 
 
 o Login
 

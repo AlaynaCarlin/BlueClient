@@ -7,6 +7,7 @@
 /* Navbar */
 .navbarButton {
   margin-right: 10px;
+
 }
 
 /* Sign up Box */
@@ -21,7 +22,7 @@
   display: flex;
   justify-content: center;
   border-radius: 20px;
-  padding: 20px;
+  padding: 10px;
   background-color: rgba(128, 128, 128, 0.1) !important;
 }
 
@@ -30,32 +31,35 @@
   background-image: url(./Components/assets/food-diary-template.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 90vh;
+  height: 100vh;
   min-width: 100%;
 }
 
-/* signup box title */
+/* SignUp box title */
 .title {
-  margin-top: 2vh;
+  margin-top: 0;
   margin-bottom: 4vh;
-}
-
-.box {
-  margin-top: 5vh;
-  width: 30%;
-  display: flex;
-}
-
-.textBox {
-  font-size: large;
+  color: rgb(104, 102, 102);
+  font-family: cursive;
   font-weight: bold;
 }
 
-.innerBox {
+/* .box {
+  margin-top: 5vh;
+  width: 30%;
+  display: flex;
+} */
+
+/* .textBox {
+  font-size: large;
+  font-weight: bold;
+} */
+
+/* .innerBox {
   display: flex;
   border-radius: 20px;
   background-color: rgba(79, 188, 225, 0.89);
-}
+} */
 
 /* Log Page */
 
@@ -89,14 +93,6 @@
 
 /* FOOTER */
 
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 50px; /* Height of the footer */
-}
-footer p {
-  font-weight: bold;
-  color: black;
-  text-align: center;
-}
+
+
+

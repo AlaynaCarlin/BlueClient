@@ -33,13 +33,12 @@ GET
 - [12/4/2021 - 12/6/2021]: built get all logs for the day 
 - [12/6/2021]: built get all logs for the past week
 - [12/6/2021]: built get all logs for the past month
-- [12/13/2021]: styled logs on log page. added scrolling.
 Ex: 11/29: Navbar.jsx – build out routing and styling.
 DELETE
-=> Completion Date: WIP / [12/7/2021]
+ => Completion Date: WIP / [12/7/2021]
 - [12/7/2021]: created delete buttons and bones
 - [12/7/2021]: debugged delete functionality 
-- [12/10/2021]: Alayna and Renee deployed our Client on Heroku.
+ 
 
 Team Member #3  [Renee Godby]
 
@@ -54,7 +53,8 @@ o Sign-up
 - [12/04/2021]: [created authorization and sign-up]
 - [12/04/2021]: [created nav bar and footer]
 - [12/07/2021]: [created form validation]
--	[12/10/2021]: Alayna and Renee deployed our Client on Heroku.
+- [12/10/2021]: Alayna and Renee deployed our Client on Heroku.
+- [12/13/2021]: Fixed footer to disappear in log pg and stay sticky on home pg. Also made navbar component smaller. 
 
 o Login
 

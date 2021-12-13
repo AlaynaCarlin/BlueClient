@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Login from "./Login";
+import Logo from "../assets/I8That_Logo_FinalSVGA_Updated.svg";
 
 import {
   Collapse,
@@ -11,39 +12,42 @@ import {
   ModalHeader,
   ModalBody,
   Modal,
+  NavbarBrand,
 } from "reactstrap";
 
 const Sitebar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [modal, setModal] = useState(false);
   const toggle = () => setModal(!modal);
-  
+
   return (
+    <div>
     <Navbar color="faded" light expand="md">
-      <NavbarToggler onClick={toggle} />
+      <NavbarBrand >
+        <img src={Logo} alt="logo" style={{ width: 50 }} />
+      </NavbarBrand>
+      <NavbarToggler onClick={toggle}  size="sm"/>
       <Collapse isOpen={isOpen} navbar>
-        <Nav className="ml-auto" navbar>
-    
+        <Nav className="ms-auto" navbar >
           <NavItem>
-            <Button className="navbarButton" onClick={toggle}>
+            <Button className="navbarButton" onClick={toggle} size="sm">
               Login
-            </Button>{' '}
-            
-              <Modal isOpen={modal} toggle={toggle}>
-                <ModalHeader>Login</ModalHeader>
-                <ModalBody>
-                  <Login updateToken={props.updateToken} toggle={toggle} />
-                </ModalBody>
-                <Button onClick={toggle}>Cancel</Button>
-              </Modal>
-            
-            <Button className="navbarButton" onClick={props.clickLogout}>
+            </Button>{" "}
+            <Modal isOpen={modal} toggle={toggle}>
+              <ModalHeader>Login</ModalHeader>
+              <ModalBody>
+                <Login updateToken={props.updateToken} toggle={toggle} />
+              </ModalBody>
+              <Button onClick={toggle}>Cancel</Button>
+            </Modal>
+            <Button className="navbarButton" onClick={props.clickLogout} size="sm">
               Logout
             </Button>
           </NavItem>
         </Nav>
       </Collapse>
     </Navbar>
+    </div>
   );
 };
 

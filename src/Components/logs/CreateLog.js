@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Form, FormGroup, Label, Input, Row, Col } from 'reactstrap';
+import APIURL from '../../helpers/environment';
 
 const LogFood = (props) => {
     const [what, setWhat] = useState('');
@@ -13,7 +14,7 @@ const LogFood = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        fetch('http://localhost:3000/log/create', {
+        fetch(`${APIURL}/log/create`, {
             method: 'POST',
             body: JSON.stringify({ log: { what: what, where: where, calories: calories, category: category, date: date, photo: photo, feelings: feelings  } }),
             headers: new Headers({
@@ -36,7 +37,7 @@ const LogFood = (props) => {
 
     return (
         <>
-            <h3>Log a Meal</h3>
+            <h3 className="logHeadings">Log a Meal</h3>
             <Form onSubmit={handleSubmit}>
                 <Row>
                 <Col>
@@ -68,14 +69,16 @@ const LogFood = (props) => {
                 </Col>
                 <Col>
                     <Label htmlFor="photo" >Photo Upload</Label>
-                    <Input name="photo" type="text" placeholder="-> Upload Here <-" value={photo} onChange={(e) => setPhoto(e.target.value)} />
+                    <Input id='exampleFile' name="file" type="file" placeholder="-> Upload Here <-" value={photo} onChange={(e) => setPhoto(e.target.value)} />
                 </Col>
                 <Col>
                     <Label htmlFor="feelings" >I'm Feeling (?)</Label>
                     <Input name="feelings" type="text" placeholder="I feel full..." value={feelings} onChange={(e) => setFeelings(e.target.value)} />
                 </Col>
+                <Col>
+                <Button style={{margin:'2vw'}} type="submit">Log It!</Button>
+                </Col>
                 </Row>
-                <Button type="submit">Log It!</Button>
             </Form>
         </>
     )

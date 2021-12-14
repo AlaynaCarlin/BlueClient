@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Col } from "reactstrap";
 import Signup from "./Signup";
+import Footer from "../Site/Footer";
 
 const Auth = (props) => {
   return (
@@ -10,6 +11,8 @@ const Auth = (props) => {
           <Signup updateToken={props.updateToken} />
         </Col>
       </Container>
+
+      <Footer className="loginStyle" />
     </div>
   );
 };

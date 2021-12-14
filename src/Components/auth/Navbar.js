@@ -21,15 +21,16 @@ const Sitebar = (props) => {
   const toggle = () => setModal(!modal);
 
   return (
+    <div>
     <Navbar color="faded" light expand="md">
-      <NavbarBrand>
-        <img src={Logo} alt="logo" style={{ width: 100, marginTop: -7 }} />
+      <NavbarBrand >
+        <img src={Logo} alt="logo" style={{ width: 50 }} />
       </NavbarBrand>
-      <NavbarToggler onClick={toggle} />
+      <NavbarToggler onClick={toggle}  size="sm"/>
       <Collapse isOpen={isOpen} navbar>
-        <Nav className="ms-auto" navbar>
+        <Nav className="ms-auto" navbar >
           <NavItem>
-            <Button className="navbarButton" onClick={toggle}>
+            <Button className="navbarButton" onClick={toggle} size="sm">
               Login
             </Button>{" "}
             <Modal isOpen={modal} toggle={toggle}>
@@ -39,13 +40,14 @@ const Sitebar = (props) => {
               </ModalBody>
               <Button onClick={toggle}>Cancel</Button>
             </Modal>
-            <Button className="navbarButton" onClick={props.clickLogout}>
+            <Button className="navbarButton" onClick={props.clickLogout} size="sm">
               Logout
             </Button>
           </NavItem>
         </Nav>
       </Collapse>
     </Navbar>
+    </div>
   );
 };
 

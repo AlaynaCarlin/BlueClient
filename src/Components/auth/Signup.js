@@ -9,6 +9,7 @@ import {
   FormFeedback,
   Container,
 } from "reactstrap";
+import APIURL from "../../helpers/environment";
 
 const Signup = (props) => {
   const [email, setEmail] = useState("");
@@ -17,7 +18,7 @@ const Signup = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     // console.log(email, password)
-    fetch("http://localhost:3000/user/register", {
+    fetch(`${APIURL}/user/register`, {
       method: "POST",
 
       body: JSON.stringify({ user: { email: email, password: password } }),
@@ -49,7 +50,7 @@ const Signup = (props) => {
     <div>
       <img src={Logo} alt="logo" width={300} />
       <h3 className="title">
-        Sign Up free today for a happier healthier you tomorrow!
+        Register free today for a healthier you tomorrow!
       </h3>
       <Form inline onSubmit={handleSubmit}>
         <FormGroup floating>

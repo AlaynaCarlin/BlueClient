@@ -42,7 +42,7 @@ function App() {
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
         {protectedViews()}
       </div>
-      <Footer className="loginStyle" />
+           
     </div>
     // </div>
   );

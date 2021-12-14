@@ -39,11 +39,12 @@ const Login = (props) => {
         </FormGroup>{" "}
         <FormGroup floating>
           <Input
-            onChange={(e) => setPassword(e.target.value)}
             id="examplePassword"
             name="password"
             placeholder="Password"
+            onChange={(e) => setPassword(e.target.value)}
             value={password}
+            type="password"
             className="form-control"
           />
           <Label for="examplePassword">Password</Label>

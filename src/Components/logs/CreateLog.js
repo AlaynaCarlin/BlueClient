@@ -37,7 +37,7 @@ const LogFood = (props) => {
 
     return (
         <>
-            <h3>Log a Meal</h3>
+            <h3 className="logHeadings">Log a Meal</h3>
             <Form onSubmit={handleSubmit}>
                 <Row>
                 <Col>
@@ -69,7 +69,7 @@ const LogFood = (props) => {
                 </Col>
                 <Col>
                     <Label htmlFor="photo" >Photo Upload</Label>
-                    <Input name="photo" type="text" placeholder="-> Upload Here <-" value={photo} onChange={(e) => setPhoto(e.target.value)} />
+                    <Input id='exampleFile' name="file" type="file" placeholder="-> Upload Here <-" value={photo} onChange={(e) => setPhoto(e.target.value)} />
                 </Col>
                 <Col>
                     <Label htmlFor="feelings" >I'm Feeling (?)</Label>

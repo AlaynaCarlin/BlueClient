@@ -93,14 +93,19 @@
 
 
 #logList {
-  width: 20vw;
+  width:15vw;
   /* padding:5vw; */
   /* border: black 2px; */
   display: flex;
+  flex-wrap: wrap;
   overflow: 'scroll';
   scroll-behavior: smooth;
   font-size: 1.25vw;
-  justify-content: left;
+  /* justify-content: center; */
+}
+
+.prettyList{
+  text-align: left;
 }
 
 /* FOOTER */

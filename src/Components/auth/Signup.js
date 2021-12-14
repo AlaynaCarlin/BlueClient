@@ -7,15 +7,20 @@ import {
   Input,
   Button,
   FormFeedback,
+  FormText,
   Container,
+  List,
 } from "reactstrap";
+// import { response } from "express";
 import APIURL from "../../helpers/environment";
 
 const Signup = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
 
   const handleSubmit = (event) => {
+    let errorCode;
     event.preventDefault();
     // console.log(email, password)
     fetch(`${APIURL}/user/register`, {
@@ -27,7 +32,17 @@ const Signup = (props) => {
         "Content-Type": "application/json",
       }),
     })
-      .then((response) => response.json())
+      .then((response) => {
+        errorCode = response.status;
+        console.log(errorCode);
+        if (errorCode === "409") {
+          setMessage("Email already in use");
+          console.log(message);
+        } else if (errorCode === "500") {
+          setMessage("Failed to register user");
+        }
+        return response.json();
+      })
       .then((data) => {
         console.log(data);
         props.updateToken(data.sessionToken);
@@ -64,7 +79,10 @@ const Signup = (props) => {
             className="form-control"
             // valid if validEmail
           />
-          <FormFeedback></FormFeedback>
+
+          {/* <FormFeedback>
+            <p className="message">{message}</p>
+          </FormFeedback> */}
 
           <Label for="exampleEmail">Email</Label>
         </FormGroup>{" "}
@@ -81,10 +99,27 @@ const Signup = (props) => {
             // invalid
           />
           <Label for="examplePassword">Password</Label>
+          <FormText>
+            <List type="unstyled" id="passwordReq">
+              <li>Password Requirements:</li>
+              <li>At least 8 characters</li>
+              <li>A mixture of both uppercase and lowercase letters.</li>
+              <li> A mixture of letters and numbers.</li>
+            </List>
+          </FormText>
+          <FormFeedback>
+            {" "}
+            {message !== "" ? <p className="message">{message}</p> : ""}
+          </FormFeedback>
+          <Label for="examplePassword">Password</Label>
         </FormGroup>{" "}
         <Button type="submit" disabled={!validEmail() || !validPassword()}>
           Sign Up
         </Button>
+        <FormFeedback>
+          {" "}
+          {message !== "" ? <p className="message">{message}</p> : ""}
+        </FormFeedback>
       </Form>
     </div>
   );

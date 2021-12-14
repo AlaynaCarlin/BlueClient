@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Logo from "../assets/I8That_Logo_FinalSVGA_Updated.svg";
 import {
   Form,
   FormGroup,
@@ -6,7 +7,7 @@ import {
   Input,
   Button,
   FormFeedback,
-  FormText,
+  Container,
 } from "reactstrap";
 import APIURL from "../../helpers/environment";
 
@@ -47,7 +48,10 @@ const Signup = (props) => {
 
   return (
     <div>
-      <h1 className="title">Sign Up</h1>
+      <img src={Logo} alt="logo" width={300} />
+      <h3 className="title">
+        Register free today for a healthier you tomorrow!
+      </h3>
       <Form inline onSubmit={handleSubmit}>
         <FormGroup floating>
           <Input
@@ -74,7 +78,7 @@ const Signup = (props) => {
             type="password"
             className="form-control"
             // valid if validPassword
-            // invalid 
+            // invalid
           />
           <Label for="examplePassword">Password</Label>
         </FormGroup>{" "}

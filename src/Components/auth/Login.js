@@ -19,7 +19,7 @@ const Login = (props) => {
       .then((response) => response.json())
       .then((data) => {
         props.updateToken(data.sessionToken);
-        props.toggle()
+        props.toggle();
       });
   };
 
@@ -48,7 +48,7 @@ const Login = (props) => {
           />
           <Label for="examplePassword">Password</Label>
         </FormGroup>{" "}
-      <Button type="submit">Login</Button>
+        <Button type="submit">Login</Button>
       </Form>
     </div>
   );

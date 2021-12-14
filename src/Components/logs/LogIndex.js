@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'reactstrap';
+import {scroll} from 'react-scroll';
 import GetLogs from './GetLogs';
 import LogFood from './CreateLog';
 import UpdateFood from './UpdateLog';
 import APIURL from '../../helpers/environment';
+import Footer from '../Site/Footer';
 
 const LogIndex = (props) => {
     const [foodLogs, setFoodLogs] = useState([]);
@@ -39,6 +41,10 @@ const LogIndex = (props) => {
         fetchLogs();
     }, [])
 
+    const scrollMore = () => {
+        scroll.scrollMore(100);
+    }
+
 console.log(foodLogs)
     return (
 
@@ -47,13 +53,14 @@ console.log(foodLogs)
                     <LogFood fetchLogs={fetchLogs} token={props.token}></LogFood>
                 </Row>
                 <Row className='getLogs'>
-                    {foodLogs !== {} ? <GetLogs  foodLogs={foodLogs} fetchLogs={fetchLogs} editUpdateLog={editUpdateLog} updateOn={updateOn} token={props.token} /> : ""}
+                    {foodLogs !== {} ? <GetLogs scrollMore={scrollMore}  foodLogs={foodLogs} fetchLogs={fetchLogs} editUpdateLog={editUpdateLog} updateOn={updateOn} token={props.token} /> : ""}
                     {/*  */}
                 </Row>
                 <Col>
                 {updateActive ? <UpdateFood logToUpdate={logToUpdate}
                 updateOff={updateOff} token={props.token} fetchLogs={fetchLogs}/> : <></>} 
                 </Col>
+                {/* <Footer className="loginStyle" /> */}
         </Container>
     )
 }

@@ -138,12 +138,12 @@ const LogTable = (props) => {
         </thead>
         </Table> */}
         <tbody>
-          <Row>
+          <Row style={{overflow:'scroll', height:'50vh'}}>
           {logMapper()}
           </Row>
         </tbody>
       
-      
+    
     </>
   );
 };

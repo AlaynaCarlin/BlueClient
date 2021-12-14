@@ -9,12 +9,15 @@ import {
   FormFeedback,
   Container,
 } from "reactstrap";
+// import { response } from "express";
 
 const Signup = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
 
   const handleSubmit = (event) => {
+    let errorCode;
     event.preventDefault();
     // console.log(email, password)
     fetch("http://localhost:3000/user/register", {
@@ -26,7 +29,17 @@ const Signup = (props) => {
         "Content-Type": "application/json",
       }),
     })
-      .then((response) => response.json())
+      .then((response) => {
+        errorCode = response.status;
+        console.log(errorCode);
+        if (errorCode === "409") {
+          setMessage("Email already in use");
+          console.log(message);
+        } else if (errorCode === "500") {
+          setMessage("Failed to register user");
+        }
+        return response.json();
+      })
       .then((data) => {
         console.log(data);
         props.updateToken(data.sessionToken);
@@ -62,7 +75,9 @@ const Signup = (props) => {
             type="email"
             className="form-control"
             // valid if validEmail
-          />
+            />
+           {message !== "" ? (
+          <p className="message">{message}</p> ):("")}
           <FormFeedback></FormFeedback>
 
           <Label for="exampleEmail">Email</Label>
@@ -79,6 +94,8 @@ const Signup = (props) => {
             // valid if validPassword
             // invalid
           />
+          {message !== "" ? (
+          <p className="message">{message}</p> ):("")}
           <Label for="examplePassword">Password</Label>
         </FormGroup>{" "}
         <Button type="submit" disabled={!validEmail() || !validPassword()}>

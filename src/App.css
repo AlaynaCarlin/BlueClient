@@ -103,8 +103,14 @@
   justify-content: left;
 }
 
-/* FOOTER */
+/* Error message */
 
-
+.message {
+  
+  color: red;
+  font-size: 15px;
+  
+  
+}
 
 

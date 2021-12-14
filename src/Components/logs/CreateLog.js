@@ -75,8 +75,10 @@ const LogFood = (props) => {
                     <Label htmlFor="feelings" >I'm Feeling (?)</Label>
                     <Input name="feelings" type="text" placeholder="I feel full..." value={feelings} onChange={(e) => setFeelings(e.target.value)} />
                 </Col>
+                <Col>
+                <Button style={{margin:'2vw'}} type="submit">Log It!</Button>
+                </Col>
                 </Row>
-                <Button type="submit">Log It!</Button>
             </Form>
         </>
     )

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Table, Button, Row, Col } from "reactstrap";
-import UpdateFood from "./UpdateLog";
+import { Table, Button, Row, Col, List } from "reactstrap";
+// import UpdateFood from "./UpdateLog";
+import APIURL from "../../helpers/environment";
 
 //create a function to pull the logs from the database by date
 
@@ -15,7 +16,7 @@ const LogTable = (props) => {
     const [specificDateArr, setSpecificDateArr] = useState([])    //global variable
 
     const deleteFoodLog = (log) => {
-        fetch(`http://localhost:3000/log/delete/${log.id}`, {
+        fetch(`${APIURL}/log/delete/${log.id}`, {
             method: "DELETE",
             headers: new Headers({
                 'Content-Type': 'application/json',
@@ -34,18 +35,19 @@ const LogTable = (props) => {
         return logs.map((log, index) => {       //logs is a variable variable. Checks btwn sets of data
             return (
               <div id='logList'>
-              <ul style={{border:'2px solid black', width:'18vw'}}>
-                <li>Log {index}</li>
-                <li>{log.what}</li>
-                <li>{log.where}</li>
-                <li>{log.calories}</li>
-                <li>{log.category}</li>
-                <li>{log.date.slice(0, 10)}</li>
-                <li>{log.photo}</li>
-                <li>{log.feelings}</li>
-                <li style={{padding:'0.5vw'}}><Button style={{color:'orange'}} onClick={() => {props.editUpdateLog(log); props.updateOn()}} >Update</Button></li>
-                <li style={{padding:'0.5vw'}}><Button style={{color:'yellow'}} onClick={() => {deleteFoodLog(log)}}>Delete</Button></li>
-              </ul>
+              <List  className="prettyList" style={{border:'0.1vw solid black'}}>
+                <li>Log {log.id}</li>
+                <li>what: {log.what}</li>
+                <li>where: {log.where}</li>
+                <li>cal: {log.calories}</li>
+                <li>category: {log.category}</li>
+                <li>date: {log.date.slice(0, 10)}</li>
+                <li>URL: {log.photo}</li>
+                <li>feels: {log.feelings}</li>
+                <div>
+                <p><Button size="sm" style={{color:'orange', fontSize:'1vw'}} onClick={() => {props.editUpdateLog(log); props.updateOn()}} >Update</Button> <Button size="sm" style={{color:'yellow', fontSize:'1vw'}} onClick={() => {deleteFoodLog(log)}}>Delete</Button> </p>
+                </div>
+              </List>
               </div>
                 // <tr key={index}>
                 //     <th scope="row">{log.id}</th>
@@ -116,9 +118,9 @@ const LogTable = (props) => {
     <>
       <h3>Log History</h3>
       <Row>
-      <Col><Button onClick={findCurrentDay}>Current Day</Button></Col>
-      <Col><Button onClick={lastSevenDays}>Last Week</Button></Col>
-      <Col><Button onClick={lastThirtyDays}>Last 30 Days</Button></Col>
+      <Col><Button style={{margin:'1vw'}} onClick={findCurrentDay}>Current Day</Button></Col>
+      <Col><Button style={{margin:'1vw'}} onClick={lastSevenDays}>Last Week</Button></Col>
+      <Col><Button style={{margin:'1vw'}} onClick={lastThirtyDays}>Last 30 Days</Button></Col>
       </Row>
       <tbody></tbody>
       <hr />

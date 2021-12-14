@@ -38,6 +38,7 @@ DELETE
  => Completion Date: WIP / [12/7/2021]
 - [12/7/2021]: created delete buttons and bones
 - [12/7/2021]: debugged delete functionality 
+- [12/14/2021]: MVP achieved. Extra styling
  
 
 Team Member #3  [Renee Godby]
@@ -61,5 +62,6 @@ o Login
 => Completion Date: 12/07/2021
 - [12/04/2021]: [created authorization and login]
 - [12/07/2021]: [created form validation]
+- [12/14/2021]: [MVP achieved. Much styling]
 
 ---

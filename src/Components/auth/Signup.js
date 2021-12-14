@@ -76,9 +76,10 @@ const Signup = (props) => {
             className="form-control"
             // valid if validEmail
             />
-           {message !== "" ? (
-          <p className="message">{message}</p> ):("")}
-          <FormFeedback></FormFeedback>
+          
+          <FormFeedback> 
+          <p className="message">{message}</p>
+          </FormFeedback>
 
           <Label for="exampleEmail">Email</Label>
         </FormGroup>{" "}
@@ -94,13 +95,15 @@ const Signup = (props) => {
             // valid if validPassword
             // invalid
           />
-          {message !== "" ? (
-          <p className="message">{message}</p> ):("")}
+         <FormFeedback> {message !== "" ? (
+          <p className="message">{message}</p> ):("")}</FormFeedback>
           <Label for="examplePassword">Password</Label>
         </FormGroup>{" "}
         <Button type="submit" disabled={!validEmail() || !validPassword()}>
           Sign Up
         </Button>
+        <FormFeedback> {message !== "" ? (
+          <p className="message">{message}</p> ):("")}</FormFeedback>
       </Form>
     </div>
   );

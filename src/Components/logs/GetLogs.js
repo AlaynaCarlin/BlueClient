@@ -34,8 +34,8 @@ const LogTable = (props) => {
         return logs.map((log, index) => {       //logs is a variable variable. Checks btwn sets of data
             return (
               <div id='logList'>
-              <ul style={{border:'2px solid black', width:'18vw'}}>
-                <li>Log {index}</li>
+              <ul style={{border:'2px solid black', width:'15vw'}}>
+                <li>Log {log.id}</li>
                 <li>{log.what}</li>
                 <li>{log.where}</li>
                 <li>{log.calories}</li>
@@ -43,8 +43,8 @@ const LogTable = (props) => {
                 <li>{log.date.slice(0, 10)}</li>
                 <li>{log.photo}</li>
                 <li>{log.feelings}</li>
-                <li style={{padding:'0.5vw'}}><Button style={{color:'orange'}} onClick={() => {props.editUpdateLog(log); props.updateOn()}} >Update</Button></li>
-                <li style={{padding:'0.5vw'}}><Button style={{color:'yellow'}} onClick={() => {deleteFoodLog(log)}}>Delete</Button></li>
+                <li style={{padding:'0.25vw'}}><Button style={{color:'orange', width:'6vw', height:'3vw', fontSize:'1vw'}} onClick={() => {props.editUpdateLog(log); props.updateOn()}} >Update</Button></li>
+                <li style={{padding:'0.25vw'}}><Button style={{color:'yellow', width:'6vw', height:'3vw', fontSize:'1vw'}} onClick={() => {deleteFoodLog(log)}}>Delete</Button></li>
               </ul>
               </div>
                 // <tr key={index}>
@@ -116,9 +116,9 @@ const LogTable = (props) => {
     <>
       <h3>Log History</h3>
       <Row>
-      <Col><Button onClick={findCurrentDay}>Current Day</Button></Col>
-      <Col><Button onClick={lastSevenDays}>Last Week</Button></Col>
-      <Col><Button onClick={lastThirtyDays}>Last 30 Days</Button></Col>
+      <Col><Button style={{margin:'1vw'}} onClick={findCurrentDay}>Current Day</Button></Col>
+      <Col><Button style={{margin:'1vw'}} onClick={lastSevenDays}>Last Week</Button></Col>
+      <Col><Button style={{margin:'1vw'}} onClick={lastThirtyDays}>Last 30 Days</Button></Col>
       </Row>
       <tbody></tbody>
       <hr />

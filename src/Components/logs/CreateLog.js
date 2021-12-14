@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Form, FormGroup, Label, Input, Row, Col } from 'reactstrap';
+import APIURL from '../../helpers/environment';
 
 const LogFood = (props) => {
     const [what, setWhat] = useState('');
@@ -13,7 +14,7 @@ const LogFood = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        fetch('http://localhost:3000/log/create', {
+        fetch(`${APIURL}/log/create`, {
             method: 'POST',
             body: JSON.stringify({ log: { what: what, where: where, calories: calories, category: category, date: date, photo: photo, feelings: feelings  } }),
             headers: new Headers({

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Table, Button, Row, Col } from "reactstrap";
-import UpdateFood from "./UpdateLog";
+// import UpdateFood from "./UpdateLog";
+import APIURL from "../../helpers/environment";
 
 //create a function to pull the logs from the database by date
 
@@ -15,7 +16,7 @@ const LogTable = (props) => {
     const [specificDateArr, setSpecificDateArr] = useState([])    //global variable
 
     const deleteFoodLog = (log) => {
-        fetch(`http://localhost:3000/log/delete/${log.id}`, {
+        fetch(`${APIURL}/log/delete/${log.id}`, {
             method: "DELETE",
             headers: new Headers({
                 'Content-Type': 'application/json',

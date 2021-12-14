@@ -4,6 +4,7 @@ import {scroll} from 'react-scroll';
 import GetLogs from './GetLogs';
 import LogFood from './CreateLog';
 import UpdateFood from './UpdateLog';
+import APIURL from '../../helpers/environment';
 import Footer from '../Site/Footer';
 
 const LogIndex = (props) => {
@@ -13,7 +14,7 @@ const LogIndex = (props) => {
 
     const fetchLogs = async () => {
         // **
-        await fetch('http://localhost:3000/log/mine', {
+        await fetch(`${APIURL}/log/mine`, {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody } from "reactstrap";
+import APIURL from "../../helpers/environment";
 
 const UpdateFood = (props) => {
     const [editWhat, setEditWhat] = useState(props.logToUpdate.what);
@@ -14,7 +15,7 @@ const UpdateFood = (props) => {
         event.preventDefault();
         console.log(props.logToUpdate);
         //* logToUpdate holds the id of the log. Also we were missing 'update' in the fetch
-        fetch(`http://localhost:3000/log/update/${props.logToUpdate.id}`, {
+        fetch(`${APIURL}/log/update/${props.logToUpdate.id}`, {
             method: 'PUT',
             body: JSON.stringify({ log: { what: editWhat, where: editWhere, calories: editCal, category: editCat, date: editDate, photo: editPhoto, feelings: editFeel } }), //diving into response and setting the values to the state variables that you declared above
             headers: new Headers({

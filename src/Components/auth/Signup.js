@@ -63,7 +63,6 @@ const Signup = (props) => {
 
   return (
     <div>
-      <img src={Logo} alt="logo" width={300} />
       <h3 className="title">
         Register free today for a healthier you tomorrow!
       </h3>

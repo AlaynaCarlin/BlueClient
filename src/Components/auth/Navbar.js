@@ -24,7 +24,7 @@ const Sitebar = (props) => {
     <div>
     <Navbar color="faded" light expand="md">
       <NavbarBrand >
-        <img src={Logo} alt="logo" style={{ width: 50 }} />
+        <img src={Logo} alt="logo" style={{ width: 50 }} /> I 8 That 
       </NavbarBrand>
       <NavbarToggler onClick={toggle}  size="sm"/>
       <Collapse isOpen={isOpen} navbar>

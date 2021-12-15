@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Login from "./Login";
 import Logo from "../assets/I8That_Logo_FinalSVGA_Updated.svg";
+import NavLogo from "../assets/I8That_Logo_NavBar.SVGA.svg"
 
 import {
   Collapse,
@@ -24,7 +25,7 @@ const Sitebar = (props) => {
     <div>
     <Navbar color="faded" light expand="md">
       <NavbarBrand >
-        <img src={Logo} alt="logo" style={{ width: 50 }} /> I 8 That 
+        <img src={NavLogo} alt="logo" style={{ width: 120 }} />  
       </NavbarBrand>
       <NavbarToggler onClick={toggle}  size="sm"/>
       <Collapse isOpen={isOpen} navbar>

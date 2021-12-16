@@ -9,6 +9,7 @@ import {
   FormFeedback,
   FormText,
   Container,
+  Text,
   List,
 } from "reactstrap";
 // import { response } from "express";
@@ -63,10 +64,9 @@ const Signup = (props) => {
 
   return (
     <div>
-      <h3 className="title"> 
-        Register free today for a healthier 
-       YOU tomorrow!
-         
+      <img src={Logo} alt="logo" width={300} />
+      <h3 className="title">
+        Register free today for a healthier you tomorrow!
       </h3>
       <Form inline onSubmit={handleSubmit}>
         <FormGroup floating>

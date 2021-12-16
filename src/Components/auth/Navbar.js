@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Login from "./Login";
-// import Logo from "../assets/I8That_Logo_FinalSVGA_Updated.svg";
+import Logo from "../assets/I8That_Logo_FinalSVGA_Updated.svg";
 import NavLogo from "../assets/I8That_Logo_NavBar.PNG"
 
 import {

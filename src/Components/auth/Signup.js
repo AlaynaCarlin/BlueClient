@@ -65,8 +65,7 @@ const Signup = (props) => {
     <div>
       <h3 className="title"> 
         Register free today for a healthier 
-        <div style = {{fontStyle:"italic"}}>YOU</div>
-         tomorrow!
+       YOU tomorrow!
          
       </h3>
       <Form inline onSubmit={handleSubmit}>

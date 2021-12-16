@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 import {
-  Table,
   Button,
   Row,
   Col,
   List,
-  Container,
   ButtonGroup,
 } from "reactstrap";
-import Logo from "../assets/I8That_Logo_FinalSVGA_Updated.svg";
+// import Logo from "../assets/I8That_Logo_FinalSVGA_Updated.svg";
 // import UpdateFood from "./UpdateLog";
 import APIURL from "../../helpers/environment";
 
@@ -45,7 +43,7 @@ const LogTable = (props) => {
     return logs.map((log, index) => {
       //logs is a variable variable. Checks btwn sets of data
       return (
-        <Container className="logBox">
+        <Col>
           <div id="logList">
             <List type="unstyled" className="prettyList">
               {/* <li id="logNumber">Log {log.id}</li> */}
@@ -82,7 +80,8 @@ const LogTable = (props) => {
               </div>
             </List>
           </div>
-        </Container>
+        </Col>
+
         // <tr key={index}>
         //     <th scope="row">{log.id}</th>
         //     <td>{log.what}</td>
@@ -157,7 +156,7 @@ const LogTable = (props) => {
     <>
       {/* <img src={Logo} alt="logo" width={300} id="logLogo" /> */}
       <div className="logHeadings">
-         <h2 >Log History</h2>
+        <h2>Log History</h2>
         <ButtonGroup className="buttonGroup">
           <Button className="daysButtons" onClick={findCurrentDay}>
             Current Day
@@ -189,7 +188,14 @@ const LogTable = (props) => {
         </thead>
         </Table> */}
       <tbody>
-        <Row style={{ overflow: "scroll", height: "60vh" }}>{logMapper()}</Row>
+        <Row
+          xs="2"
+          md="3"
+          xl="6"
+          style={{ overflow: "scroll", height: "60vh" }}
+        >
+          {logMapper()}
+        </Row>
       </tbody>
     </>
   );

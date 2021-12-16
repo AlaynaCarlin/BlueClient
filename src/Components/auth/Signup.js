@@ -63,8 +63,10 @@ const Signup = (props) => {
 
   return (
     <div>
-      <h3 className="title">
-        Register free today for a healthier you tomorrow!
+      <h3 className="title"> 
+        Register free today for a healthier 
+       YOU tomorrow!
+         
       </h3>
       <Form inline onSubmit={handleSubmit}>
         <FormGroup floating>

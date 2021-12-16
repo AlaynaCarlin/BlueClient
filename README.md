@@ -1,7 +1,5 @@
 I 8 That
 
-              [Brief description of project build]  *This will be different between client and server.  It can be detailed as you see fit (look over other ReadMe files for examples)
-
 Technology Used:
 
               Using Trello and daily stand-up communications to inform our team-mates of successes, challenges, and needs.

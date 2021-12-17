@@ -9,6 +9,7 @@ import {
   FormFeedback,
   FormText,
   Container,
+  Text,
   List,
 } from "reactstrap";
 // import { response } from "express";

@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { Table, Button, Row, Col, List, Container } from "reactstrap";
+import {
+  Button,
+  Row,
+  Col,
+  List,
+  ButtonGroup,
+} from "reactstrap";
+// import Logo from "../assets/I8That_Logo_FinalSVGA_Updated.svg";
 // import UpdateFood from "./UpdateLog";
 import APIURL from "../../helpers/environment";
 
@@ -36,34 +43,45 @@ const LogTable = (props) => {
     return logs.map((log, index) => {
       //logs is a variable variable. Checks btwn sets of data
       return (
-        <Container className="logBox">
-        <div id="logList">
-          <List type="unstyled" className="prettyList">
-            <li id="logNumber">Log {log.id}</li>
-            
-            <ul>
-            <li>What: {log.what}</li>
-            <li>Where: {log.where}</li>
-            <li>Cal: {log.calories}</li>
-            <li>Category: {log.category}</li>
-            <li>Date: {log.date.slice(0, 10)}</li>
-            <li>URL: {log.photo}</li>
-            <li>Feels: {log.feelings}</li>
-            </ul>
-            <div className="logButtons">
-              <Button id="updateButton" size="sm" onClick={() => 
-              {props.editUpdateLog(log); props.updateOn();
-}}>
-                Update
-              </Button>
-              <Button id="deleteButton" size="sm" onClick={() => 
-                { deleteFoodLog(log);}}>
-                Delete
-              </Button>
-            </div>
-          </List>
-        </div>
-        </Container>
+        <Col>
+          <div id="logList">
+            <List type="unstyled" className="prettyList">
+              {/* <li id="logNumber">Log {log.id}</li> */}
+              <li id="logNumber">{log.date.slice(0, 10)}</li>
+
+              <ul>
+                <li>What: {log.what}</li>
+                <li>Where: {log.where}</li>
+                <li>Cal: {log.calories}</li>
+                <li>Category: {log.category}</li>
+                <li>URL: {log.photo}</li>
+                <li>Feels: {log.feelings}</li>
+              </ul>
+              <div className="logButtons">
+                <Button
+                  id="updateButton"
+                  size="sm"
+                  onClick={() => {
+                    props.editUpdateLog(log);
+                    props.updateOn();
+                  }}
+                >
+                  Update
+                </Button>
+                <Button
+                  id="deleteButton"
+                  size="sm"
+                  onClick={() => {
+                    deleteFoodLog(log);
+                  }}
+                >
+                  Delete
+                </Button>
+              </div>
+            </List>
+          </div>
+        </Col>
+
         // <tr key={index}>
         //     <th scope="row">{log.id}</th>
         //     <td>{log.what}</td>
@@ -136,25 +154,24 @@ const LogTable = (props) => {
 
   return (
     <>
-      <h3 className="logHeadings">Log History</h3>
-      <Row>
-        <Col>
+      {/* <img src={Logo} alt="logo" width={300} id="logLogo" /> */}
+      <div className="logHeadings">
+        <h2>Log History</h2>
+        <ButtonGroup className="buttonGroup">
           <Button className="daysButtons" onClick={findCurrentDay}>
             Current Day
           </Button>
-        </Col>
-        <Col>
+
           <Button className="daysButtons" onClick={lastSevenDays}>
             Last Week
           </Button>
-        </Col>
-        <Col>
+
           <Button className="daysButtons" onClick={lastThirtyDays}>
             Last 30 Days
           </Button>
-        </Col>
-      </Row>
-      <tbody></tbody>
+        </ButtonGroup>
+      </div>
+
       <hr />
       {/* <Table striped style={{display:"flex"}}>
         <thead>
@@ -171,7 +188,14 @@ const LogTable = (props) => {
         </thead>
         </Table> */}
       <tbody>
-        <Row style={{ overflow: "scroll", height: "50vh" }}>{logMapper()}</Row>
+        <Row
+          xs="2"
+          md="3"
+          xl="6"
+          style={{ overflow: "scroll", height: "60vh" }}
+        >
+          {logMapper()}
+        </Row>
       </tbody>
     </>
   );

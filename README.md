@@ -66,3 +66,16 @@ o Login
 - [12/14/2021]: [MVP achieved. Much styling]
 
 ---
+
+Team Special Smarts Retrospective - 12/16/2021
+
+What Went Well:
+-	Alayna – We really excelled at communicating with each other on ideas, concerns, victories.
+-	Ben – We managed to rally behind our Git Master having command of when we push/pull code and it really helped to keep our technical debt to a minimum. 
+-	Renee – We kept each other motivated throughout our project and didn’t have to lean on anyone to keep up. 
+What Could Have Been Improved Upon:
+-	Renee – Stepped in with the styling much sooner to allow more time for troubleshooting of the code.
+-	Ben – I would have stepped in to work as the Git Master so my team could concentrate on coding instead of debugging and troubleshooting Heroku. 
+-	Alayna – Planning would or should have been a bit more thought out. Talked more about coding in the same files at the same time to avoid code-mishaps and would have gone about the planning doc differently. 
+Conclusion:
+As a whole, our group pulled this project together and worked cohesively to provide a MVP for Boniva with 1 – 2 extra features (Logo, ability to upload images from file explorer, and mobile responsiveness) the client would have loved to see.

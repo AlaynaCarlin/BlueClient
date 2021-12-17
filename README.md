@@ -1,4 +1,5 @@
-I 8 That! [I8That_Logo_FinalSVGA](https://user-images.githubusercontent.com/63788692/146471369-cc613722-711d-465a-b7c4-9012fda6d932.png)
+I 8 That! ![I8That_Logo_NavBar](https://user-images.githubusercontent.com/63788692/146471485-94e56da9-4c74-49fa-9569-dc4790cb65ce.PNG)
+
 
 
 Technology Used:

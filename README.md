@@ -66,6 +66,7 @@ o Login
 - [12/07/2021]: [created form validation]
 - [12/14/2021]: [MVP achieved. Much styling]
 
+
 ---
 
 Team Special Smarts Retrospective - 12/16/2021

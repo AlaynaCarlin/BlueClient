@@ -18,6 +18,7 @@ o Endpoint 1 Create Log | Endpoint 2 Update
 - [12/06/2021]: UpdateLog/LogIndex - Worked on Code for Update and got it partially working
 - [12/07/2021]: Update – finally functioning update
 -	[12/10/2021]: Alayna and Renee deployed our Client on Heroku. I was stuck at work.
+-	[12/16/2021]: retrospective with team
 
 ---
 

@@ -5,6 +5,7 @@
 Technology Used:
 
               Using Trello and daily stand-up communications to inform our team-mates of successes, challenges, and needs.
+              Affinity Designer for Logo and image creation
 
 Team Member #1  Ben Marlowe
 

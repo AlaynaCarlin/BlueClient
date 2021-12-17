@@ -6,7 +6,7 @@ const Footer = () => {
     <Navbar fixed="bottom" expand="md">
       <Collapse navbar>
       <Row >
-        <p className="footer">&copy;Boniva Health 2021</p>
+        <p className="footer">&copy; 2021 Boniva Health &trade;</p>
       </Row>
       </Collapse>
     </Navbar>
